@@ -56,17 +56,17 @@ export default function Navbar() {
             className="flex flex-col leading-none text-left"
           >
             <span
-              className="text-cream text-xs tracking-[0.2em] uppercase"
+              className="text-cream text-lg tracking-[0.2em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
             >
-              Lorraine Wambiru
+              L.
             </span>
-            <span
+            {/* <span
               className="text-moss text-[10px] tracking-[0.25em] uppercase mt-0.5"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               Product & Visual Designer
-            </span>
+            </span> */}
           </button>
 
           {/* ── Desktop links ── */}

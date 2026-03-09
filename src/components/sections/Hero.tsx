@@ -1,6 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import InkBleed from "@/components/shared/InkBleed";
+// import VellumOverlay from "@/components/shared/VellumOverlay";
 import Image from "next/image";
 
 // Stagger helper
@@ -24,6 +26,37 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const contentY       = useTransform(scrollYProgress, [0, 0.5], ["0%", "-6%"]);
 
+  // Cursor tracking springs
+const rawX = useSpring(0, { stiffness: 25, damping: 15, mass: 1.0 });
+const rawY = useSpring(0, { stiffness: 25, damping: 15, mass: 1.0 });
+const trackX = useTransform(rawX, [-1, 1], [-19, 19]);
+const trackY = useTransform(rawY, [-1, 1], [-15, 15]);
+
+useEffect(() => {
+  const container = containerRef.current;
+  if (!container) return;
+
+  const handleMove = (e: MouseEvent) => {
+    const rect = container.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    const y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+    rawX.set(x);
+    rawY.set(y);
+  };
+
+  const handleLeave = () => {
+    rawX.set(0);
+    rawY.set(0);
+  };
+
+  container.addEventListener("mousemove", handleMove);
+  container.addEventListener("mouseleave", handleLeave);
+  return () => {
+    container.removeEventListener("mousemove", handleMove);
+    container.removeEventListener("mouseleave", handleLeave);
+  };
+}, [rawX, rawY]);
+
   return (
     <section
       ref={containerRef}
@@ -39,6 +72,15 @@ export default function Hero() {
           backgroundSize: "200px 200px",
         }}
       />
+
+      {/* ── Starfield ── */}
+      {/* <StarField /> */}
+      {/* ── Ink bleed ── */}
+<InkBleed />
+
+{/* ── Vellum paper texture ── */}
+{/* <VellumOverlay /> */}
+
 
       {/* ── Vertical label — left edge ── */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center gap-4">
@@ -199,8 +241,12 @@ export default function Hero() {
         >
           <motion.div
             style={{ y: imageY }}
-            className="relative w-[480px] h-[620px]"
+            className="relative w-[580px] h-[620px]"
           >
+            <motion.div
+              style={{ x: trackX, y: trackY }}
+              className="absolute inset-0"
+            >
             {/* Image container with CSS treatment */}
             <div className="relative w-full h-full overflow-hidden">
               <Image
@@ -234,17 +280,18 @@ export default function Hero() {
               <div
                 className="absolute bottom-0 left-0 right-0 h-28"
                 style={{
-                   background: "linear-gradient(to top, #121113, transparent)",
+                   //background: "linear-gradient(to top, #121113, transparent)",
                 }}
               />
             </div>
+            </motion.div>
 
             {/* Floating stat card — bottom left of image */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.4, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute -bottom-6 -left-10 bg-forest border border-moss/20 px-6 py-4"
+              className="absolute -bottom-6 -left-10 bg-forest border border-moss/20 px-8 py-4"
             >
               <p
                 className="text-moss text-[9px] tracking-[0.3em] uppercase mb-1"
@@ -258,7 +305,7 @@ export default function Hero() {
               >
                 2+ Years
               </p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Floating discipline tag — top right */}
             {/* <motion.div
