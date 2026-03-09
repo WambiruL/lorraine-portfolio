@@ -6,6 +6,9 @@ import PageTransition from "@/components/shared/PageTransition";
 export const metadata: Metadata = {
   title: "Lorraine Wambiru — Product & Visual Designer",
   description: "Crafting interfaces that think and visuals that feel.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     title: "Lorraine Wambiru — Product & Visual Designer",
     description: "Crafting interfaces that think and visuals that feel.",

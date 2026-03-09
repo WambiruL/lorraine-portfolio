@@ -1,7 +1,7 @@
 export interface Project {
   slug: string;
   title: string;
-  category: 'UX/UI' | 'Graphic Design' | 'Branding';
+  category: 'UX/UI' | 'Graphic Design' | 'Branding'| 'Visual Journalism';
   year: string;
   description: string;
   coverImage: string;
