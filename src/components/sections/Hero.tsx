@@ -113,7 +113,7 @@ useEffect(() => {
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-moss/40 to-transparent"
+          className="w-px h-8 bg-gradient-to-b from-moss/40 to-tr ansparent"
         />
       </motion.div>
 
