@@ -73,17 +73,17 @@ const process = [
   {
     num: "02",
     title: "Define",
-    body: "Three needs emerged — a low-barrier entry point, a private space to process emotions, and personalised guidance that improves over time.",
+    body: "Three needs emerged, a low-barrier entry point, a private space to process emotions, and personalised guidance that improves over time.",
   },
   {
     num: "03",
     title: "Ideate",
-    body: "Explored 20+ directions before converging on three pillars: Private Journaling, AI Chat Companion, and Mood Insights — a complete support loop, not isolated features.",
+    body: "Explored 20+ directions before converging on three pillars: Private Journaling, AI Chat Companion, and Mood Insights, a complete support loop, not isolated features.",
   },
   {
     num: "04",
     title: "Prototype",
-    body: "Built high-fidelity screens in Figma covering every core flow — onboarding, dashboard, journal, AI chat, insights, and therapist resources — plus a full component library.",
+    body: "Built high-fidelity screens in Figma covering every core flow, onboarding, dashboard, journal, AI chat, insights, and therapist resources, plus a full component library.",
   },
   {
     num: "05",
@@ -725,37 +725,75 @@ export default function SolaraPage() {
         {/* Design system grid */}
         <Reveal delay={0.05}>
           <SectionLabel>Design System</SectionLabel>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mt-6">
-            {[
-              { src: "/images/projects/solara/9.png",  label: "Colour Palette" },
-              { src: "/images/projects/solara/8.png",  label: "Typography" },
-              { src: "/images/projects/solara/7.png",  label: "Components" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="relative overflow-hidden"
-                style={{ aspectRatio: "16/9", border: "1px solid rgba(137,152,120,0.1)" }}
-              >
-                <img src={item.src} alt={item.label} className="w-full h-full object-cover" />
-                <div
-                  className="absolute bottom-0 left-0 right-0 p-5"
-                  style={{ background: "linear-gradient(to top, rgba(18,17,19,0.9), transparent)" }}
-                >
-                  <p
-                    style={{
-                      fontFamily: "var(--font-mono)",
-                      fontSize: "0.58rem",
-                      letterSpacing: "0.25em",
-                      textTransform: "uppercase" as const,
-                      color: "rgba(228,230,195,0.5)",
-                    }}
-                  >
-                    {item.label}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="grid lg:grid-cols-3 gap-6 mb-16">
+  {/* Colour Palette */}
+  <Reveal delay={0}>
+    <div className="p-8 h-full" style={{ border: "1px solid rgba(149,213,178,0.12)" }}>
+      <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: "#95D5B2", marginBottom: "20px" }}>
+        Colour Palette
+      </p>
+      {[
+        { hex: "#1B4332", name: "Deep Forest" },
+        { hex: "#2D6A4F", name: "Mid Green" },
+        { hex: "#95D5B2", name: "Solara Mint" },
+        { hex: "#F8F9FA", name: "Off White" },
+      ].map((c) => (
+        <div key={c.hex} className="flex items-center gap-4 mb-4">
+          <div className="w-8 h-8 rounded-full flex-shrink-0" style={{ background: c.hex, border: "1px solid rgba(255,255,255,0.1)" }} />
+          <div>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", color: "var(--cream)" }}>{c.hex}</p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(228,230,195,0.4)" }}>{c.name}</p>
           </div>
+        </div>
+      ))}
+    </div>
+  </Reveal>
+
+  {/* Typography */}
+  <Reveal delay={0.05}>
+    <div className="p-8 h-full" style={{ border: "1px solid rgba(149,213,178,0.12)" }}>
+      <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: "#95D5B2", marginBottom: "20px" }}>
+        Typography
+      </p>
+      <p style={{ fontFamily: "var(--font-display)", fontSize: "3rem", fontWeight: 300, color: "var(--cream)", lineHeight: 1, marginBottom: "12px", letterSpacing: "-0.02em" }}>
+        Nunito
+      </p>
+      <div className="flex gap-3 flex-wrap mb-5">
+        {["Light", "Regular", "Medium", "Bold"].map((w) => (
+          <span key={w} style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.2em", color: "rgba(228,230,195,0.4)", textTransform: "uppercase" as const }}>
+            {w}
+          </span>
+        ))}
+      </div>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", lineHeight: 1.7, color: "rgba(228,230,195,0.4)" }}>
+        Nunito for display and body, clean and accessible at every size.
+      </p>
+    </div>
+  </Reveal>
+
+  {/* Components */}
+  <Reveal delay={0.1}>
+    <div className="p-8 h-full" style={{ border: "1px solid rgba(149,213,178,0.12)" }}>
+      <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: "#95D5B2", marginBottom: "20px" }}>
+        Key Components
+      </p>
+      {[
+        "Mood check-in slider",
+        "AI chat interface",
+        "Journal entry cards",
+        "Personalised resource tiles",
+        "Mood trend graph",
+        "Therapist directory cards",
+        "Onboarding progress dots",
+      ].map((c) => (
+        <div key={c} className="flex items-start gap-3 mb-4">
+          <span style={{ color: "#95D5B2", fontSize: "0.6rem", paddingTop: "5px" }}>→</span>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(228,230,195,0.5)", lineHeight: 1.5 }}>{c}</p>
+        </div>
+      ))}
+    </div>
+  </Reveal>
+</div>
         </Reveal>
       </section>
 
