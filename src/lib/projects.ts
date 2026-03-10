@@ -2,9 +2,9 @@ import { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    slug: "bbc-news-branding",
-    title: "BBC News",
-    category: "Visual Journalism",
+    slug: "visual-journalism-branding",
+    title: "Visual Design & Branding",
+    category: "Graphic Design",
     year: "2025",
     description: "Graphic design and event branding work produced during a BBC News contract.",
     coverImage: "/images/projects/bbc-cover.png",

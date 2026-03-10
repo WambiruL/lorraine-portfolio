@@ -73,6 +73,26 @@ export default function PublicPulsePage() {
   return (
     <main style={{ background: "var(--ink)", color: "var(--cream)", minHeight: "100vh" }}>
 
+        {/* Back link */}
+      <div className="fixed top-8 left-8 lg:left-16 z-50">
+        <Link
+          href="/"
+          className="group flex items-center gap-2 transition-colors duration-300"
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.6rem",
+            letterSpacing: "0.25em",
+            textTransform: "uppercase" as const,
+            color: "rgba(228,230,195,0.4)",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+          onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(228,230,195,0.4)")}
+        >
+          <span className="transition-transform duration-300 group-hover:-translate-x-1 inline-block">←</span>
+          Back to portfolio
+        </Link>
+      </div>
+
       {/* ── HERO ── */}
       <section
         ref={heroRef}
@@ -82,21 +102,17 @@ export default function PublicPulsePage() {
         {/* Ghost wordmark */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
           <motion.span
-            className="font-display whitespace-nowrap"
-            style={{
-                opacity: "heroOpacity",
-                y:"heroY",
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(6rem, 18vw, 18rem)",
-              fontWeight: 700,
-              letterSpacing: "-0.02em",
-              color: "transparent",
-              WebkitTextStroke: "1px rgba(0,136,149,0.08)",
-              userSelect: "none",
-            } as React.CSSProperties}
-          >
-            PUBLIC PULSE
-          </motion.span>
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(8rem, 22vw, 22rem)",
+                fontWeight: 300,
+                letterSpacing: "0.15em",
+                color: "rgba(149,213,178,0.04)",
+                lineHeight: 1,
+              }}
+            >
+              PUBLIC PULSE
+            </motion.span>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full">
@@ -515,7 +531,7 @@ export default function PublicPulsePage() {
           {/* Behance + live link buttons */}
           <div className="flex items-center gap-5 flex-wrap mb-20">
             
-            <a  href="https://www.behance.net/gallery/YOUR_BEHANCE_ID/PublicPulse"
+            <a  href="https://www.behance.net/gallery/205605743/Public-Pulse-An-AI-powered-Citizen-Feedback-System"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden flex items-center gap-3 px-7 py-3.5 transition-colors duration-500"
