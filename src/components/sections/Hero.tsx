@@ -113,7 +113,7 @@ useEffect(() => {
         <motion.span
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-moss/40 to-tr ansparent"
+          className="w-px h-8 bg-gradient-to-b from-moss/40 to-transparent"
         />
       </motion.div>
 
@@ -130,7 +130,7 @@ useEffect(() => {
             {...fadeUp(0.4)}
             className="flex items-center gap-4 mb-10"
           >
-            <span className="w-10 h-px bg-moss/60" />
+            {/* <span className="w-10 h-px bg-moss/60" /> */}
             <span
               className="text-moss text-[1em] tracking-[0.3em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
