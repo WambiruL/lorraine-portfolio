@@ -242,7 +242,7 @@ export default function Footer() {
             {/* Download CV */}
             
             <a href="/lorraine-wambiru-cv.pdf"
-              download
+              download 
               data-hover
               className="group relative overflow-hidden flex items-center gap-2.5 px-6 py-3 transition-all duration-500"
               style={{

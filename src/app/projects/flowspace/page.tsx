@@ -863,7 +863,7 @@ export default function FlowspacePage() {
             Next Project
           </p>
 
-          <Link href="/projects/bbc-news-branding" className="group block">
+          <Link href="/projects/visual-journalism-branding" className="group block">
             <h2
               className="mb-4 transition-colors duration-300 group-hover:text-moss"
               style={{
@@ -890,7 +890,7 @@ export default function FlowspacePage() {
           </Link>
 
           <Link
-            href="/projects/bbc-news-branding"
+            href="/projects/visual-journalism-branding"
             className="group inline-flex items-center gap-3 mt-14"
             style={{ color: "rgba(228,230,195,0.3)" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
