@@ -3,9 +3,9 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const socials = [
-  { label: "LinkedIn",  href: "https://linkedin.com/in/lorrainewambiru" },
-  { label: "Behance",   href: "https://behance.net/lorrainewambiru" },
-  { label: "GitHub",    href: "https://github.com/lorrainewambiru" },
+  { label: "LinkedIn",  href: "https://www.linkedin.com/in/lorraine-wambiru/" },
+  { label: "Behance",   href: "https://www.behance.net/lorrainewambui" },
+  { label: "GitHub",    href: "https://github.com/WambiruL" },
 ];
 
 export default function Footer() {
@@ -59,8 +59,8 @@ export default function Footer() {
             <span
               style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: "0.6rem",
-                letterSpacing: "0.35em",
+                fontSize: "0.8em",
+                letterSpacing: "0.3em",
                 color: "rgba(137,152,120,0.6)",
                 textTransform: "uppercase" as const,
               }}
@@ -231,7 +231,7 @@ export default function Footer() {
             <span
               style={{
                 fontFamily: "var(--font-mono)",
-                fontSize: "0.58rem",
+                fontSize: "0.68rem",
                 letterSpacing: "0.15em",
                 color: "rgba(137,152,120,0.2)",
               }}

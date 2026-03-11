@@ -353,25 +353,10 @@ export default function UgandaElectionsPage() {
 
         {/* Wordtype — full width */}
         <Reveal delay={0.05} className="mb-6">
-        <div
-            className="relative overflow-hidden"
-            style={{
-            aspectRatio: "500/200",
-            background: "#1a1206",
-            border: `1px solid ${ACCENT}15`,
-            maxWidth: "520px",
-            }}
-        >
-            <img
-            src="/images/projects/vjb/uganda/wordtype.png"
-            alt="Wordtype"
-            className="w-full h-full"
-            style={{ objectFit: "contain", padding: "24px" }}
-            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-            />
-             
-        </div>
+          {/* PATH: /images/projects/vjb/wafcon/wordtype.jpg */}
+          <ImgSlot src="/images/projects/vjb/uganda/wordtype.png" label="Wordtype" aspect="16/5" />
         </Reveal>
+        
 
 
         {/* ── DIVIDER ── */}

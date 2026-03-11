@@ -162,7 +162,7 @@ export default function DesignProcess() {
               </span>
               <span className="w-8 h-px bg-moss/30" />
               <span
-                className="text-moss/60 text-[9px] tracking-[0.35em] uppercase"
+                className="text-moss/60 text-[0.8em] tracking-[0.3em] uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Design Thinking
@@ -230,7 +230,7 @@ export default function DesignProcess() {
           ref={caseStudyRef}
           style={{ opacity: caseOpacity, y: caseY }}
         >
-          <Link href="/projects/bbc-news-branding" className="group block">
+          <Link href="/projects/visual-journalism-branding/uganda-elections" className="group block">
             <div
               className="relative overflow-hidden px-8 py-10 lg:px-12 lg:py-14"
               style={{
@@ -262,7 +262,7 @@ export default function DesignProcess() {
                 {/* Left content */}
                 <div>
                   <span
-                    className="text-moss text-[9px] tracking-[0.35em] uppercase mb-5 block"
+                    className="text-moss text-[0.8em] tracking-[0.3em] uppercase mb-5 block"
                     style={{ fontFamily: "var(--font-mono)" }}
                   >
                     Featured Case Study
@@ -305,7 +305,7 @@ export default function DesignProcess() {
                     }}
                   >
                     <span
-                      className="relative z-10 text-[10px] tracking-[0.25em] uppercase group-hover/btn:text-ink transition-colors duration-500 whitespace-nowrap"
+                      className="relative z-10 text-[0.6em] tracking-[0.25em] uppercase group-hover/btn:text-ink transition-colors duration-500 whitespace-nowrap"
                       style={{ fontFamily: "var(--font-mono)" }}
                     >
                       Read Case Study

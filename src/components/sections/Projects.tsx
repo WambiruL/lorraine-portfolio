@@ -115,7 +115,7 @@ function ProjectCard({
           {/* Frosted state content — center */}
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6">
             <span
-              className="text-cream/20 text-[9px] tracking-[0.3em] uppercase"
+              className="text-cream/20 text-[0.8em] tracking-[0.3em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               {project.category}
@@ -140,7 +140,7 @@ function ProjectCard({
             >
               <span className="w-4 h-px bg-moss/40" />
               <span
-                className="text-moss/50 text-[8px] tracking-[0.3em] uppercase"
+                className="text-moss/50 text-[0.6em] tracking-[0.3em] uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Hover to reveal
@@ -367,7 +367,7 @@ export default function Projects() {
         >
           <div>
             <p
-              className="text-moss text-[10px] tracking-[0.35em] uppercase mb-4"
+              className="text-moss text-[0.8em] tracking-[0.25em] uppercase mb-4"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               Selected Work
@@ -455,7 +455,7 @@ export default function Projects() {
         >
           <span className="w-6 h-px bg-moss/25" />
           <p
-            className="text-sage/30 text-[10px] tracking-[0.25em] uppercase"
+            className="text-sage/30 text-[0.6em] tracking-[0.25em] uppercase"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             More work available on request

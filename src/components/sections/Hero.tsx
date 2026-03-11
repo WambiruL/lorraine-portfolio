@@ -85,14 +85,14 @@ useEffect(() => {
       {/* ── Vertical label — left edge ── */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2 z-20 hidden lg:flex flex-col items-center gap-4">
         <span
-          className="text-moss/40 text-[9px] tracking-[0.35em] uppercase"
+          className="text-moss/40 text-[15px] tracking-[0.35em] uppercase"
           style={{
             fontFamily: "var(--font-mono)",
             writingMode: "vertical-rl",
             transform: "rotate(180deg)",
           }}
         >
-          Portfolio 2024
+          Portfolio 2026
         </span>
         <span className="w-px h-16 bg-moss/20" />
       </div>
@@ -132,7 +132,7 @@ useEffect(() => {
           >
             <span className="w-10 h-px bg-moss/60" />
             <span
-              className="text-moss text-[10px] tracking-[0.35em] uppercase"
+              className="text-moss text-[1em] tracking-[0.3em] uppercase"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               Product & Visual Designer
@@ -211,7 +211,7 @@ useEffect(() => {
               onClick={() => {
                 document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative overflow-hidden border border-moss/50 px-8 py-3.5 text-[10px] tracking-[0.25em] uppercase text-moss transition-all duration-500 hover:text-ink"
+              className="group relative overflow-hidden border border-moss/50 px-8 py-3.5 text-[0.8em] tracking-[0.25em] uppercase text-moss transition-all duration-500 hover:text-ink"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               <span className="relative z-10">View Work</span>
@@ -223,7 +223,7 @@ useEffect(() => {
               onClick={() => {
                 document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="text-[10px] tracking-[0.25em] uppercase text-sage/50 hover:text-cream transition-colors duration-300 flex items-center gap-2 group"
+              className="text-[0.8em] tracking-[0.25em] uppercase text-sage/50 hover:text-cream transition-colors duration-300 flex items-center gap-2 group"
               style={{ fontFamily: "var(--font-mono)" }}
             >
               About Me

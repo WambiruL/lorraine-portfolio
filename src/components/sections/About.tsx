@@ -18,12 +18,12 @@ const skills = [
 ];
 
 const tools = [
-  // { name: "Git & Github", level: 98 },
+  //{ name: "Git & Github", level: 98 },
   { name: "Figma",             level: 95 },
   { name: "Adobe Photoshop",     level: 85 },
   { name: "Adobe Illustrator", level: 75 },
-  { name: "React & TypeScript", level: 65 },
-  
+  { name: "React & TypeScript", level: 65 }
+
 ];
 
 const outside = [
@@ -49,38 +49,49 @@ function ToolBar({ tool, index }: { tool: (typeof tools)[0]; index: number }) {
           {tool.name}
         </span>
         <span
-          className="text-moss/50 text-[9px] tracking-[0.2em]"
+          className="text-moss/50 text-[0.7em] tracking-[0.15em]"
           style={{ fontFamily: "var(--font-mono)" }}
         >
           {tool.level}%
         </span>
       </div>
       <div
-        className="relative h-px w-full"
-        style={{ background: "rgba(137,152,120,0.1)" }}
-      >
+  className="relative w-full"
+  style={{ background: "rgba(137,152,120,0.1)", height: "1px", overflow: "visible" }}
+>
         <motion.div
-          style={{ width }}
-          className="absolute top-0 left-0 h-px"
+          style={{ width, height: "1px", overflow: "visible" }}
+          className="absolute top-0 left-0"
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
-          // Gradient bar
         >
+          {/* Bar body */}
           <div
             className="w-full h-full"
             style={{
-              background: "linear-gradient(to right, rgba(137,152,120,0.4), rgba(137,152,120,0.9))",
+              background: "linear-gradient(to right, rgba(137,152,120,0.3), rgba(137,152,120,0.95))",
             }}
           />
-          {/* Glowing tip */}
+            {/* Glow trail along the whole bar */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: "linear-gradient(to right, transparent 0%, rgba(137,152,120,0.25) 50%, rgba(137,152,120,0.6) 100%)",
+                filter: "blur(3px)",
+              }}
+            />
+          {/* Glowing tip dot */}
           <div
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full"
-            style={{ background: "var(--moss)", boxShadow: "0 0 6px rgba(137,152,120,0.8)" }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full"
+            style={{
+              background: "var(--sage)",
+              boxShadow: "0 0 6px 2px rgba(137,152,120,0.8), 0 0 12px 4px rgba(137,152,120,0.3)",
+            }}
           />
-        </motion.div>
-      </div>
-    </motion.div>
-  );
-}
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          }
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -132,7 +143,7 @@ export default function About() {
           </span>
           <span className="w-8 h-px bg-moss/30" />
           <span
-            className="text-moss/60 text-[9px] tracking-[0.35em] uppercase"
+            className="text-moss/60 text-[0.8em] tracking-[0.3em] uppercase"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             About
@@ -214,7 +225,7 @@ export default function About() {
             {/* Outside of work — on desktop sits under photo */}
             <div className="hidden lg:block mt-4">
               <p
-                className="text-moss/50 text-[9px] tracking-[0.3em] uppercase mb-4"
+                className="text-moss/50 text-[0.6em] tracking-[0.3em] uppercase mb-4"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Outside of Work
@@ -256,9 +267,9 @@ export default function About() {
                   fontWeight: 300,
                 }}
               >
-                I&apos;m Lorraine
+                I&apos;m Lorraine;
                 <br />
-                <span style={{ fontStyle: "italic" }}>designer at heart,</span>
+                <span style={{ fontStyle: "italic" }}>designer at heart</span>
                 <br />
                 <span className="text-sage/35">engineer by practise.</span>
               </h2>
@@ -314,7 +325,7 @@ export default function About() {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             >
               <p
-                className="text-moss/50 text-[9px] tracking-[0.3em] uppercase mb-5"
+                className="text-moss/50 text-[0.8em] tracking-[0.3em] uppercase mb-5"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Skills
@@ -343,10 +354,10 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-3"
             >
               <p
-                className="text-moss/50 text-[9px] tracking-[0.3em] uppercase"
+                className="text-moss/50 text-[0.8em] tracking-[0.3em] uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
                 Tools & Proficiency

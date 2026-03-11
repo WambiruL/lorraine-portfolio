@@ -31,20 +31,20 @@ function Reveal({
 type Filter = "ALL" | "GRAPHICS" | "BRANDING";
 
 const editorialPosts = [
-  { id: 1,  title: "Crimes Against Children", src: "/images/projects/vjb/1.png",  category: "GRAPHICS" },
-  { id: 2,  title: "How Ivory Coast Voted",                                     src: "/images/projects/vjb/2.png",  category: "GRAPHICS" },
-  { id: 3,  title: "Hausa Day",                                                  src: "/images/projects/vjb/3.png",  category: "GRAPHICS" },
-  { id: 4,  title: "Ramadan Kareem",                                             src: "/images/projects/vjb/4.png",  category: "GRAPHICS" },
-  { id: 5,  title: "Foreign Aid in Africa",      src: "/images/projects/vjb/5.png",  category: "GRAPHICS" },
-  { id: 6,  title: "UK's Immigration Policy?",   src: "/images/projects/vjb/6.png",  category: "GRAPHICS" },
-  { id: 7,  title: "Eid Mubarak",                                                src: "/images/projects/vjb/7.png",  category: "GRAPHICS" },
-  { id: 8,  title: "The Crisis in Sudan",               src: "/images/projects/vjb/8.png",  category: "GRAPHICS" },
-  { id: 9,  title: "Sudan Civil War: Key Events",                                src: "/images/projects/vjb/9.png",  category: "GRAPHICS" },
-  { id: 10, title: "The Golden Boot Race",                       src: "/images/projects/vjb/10.png", category: "GRAPHICS" },
-  { id: 11, title: "African Women Jailed",         src: "/images/projects/vjb/11.png", category: "GRAPHICS" },
-  { id: 12, title: "Health Workers in Ethiopia",    src: "/images/projects/vjb/12.png", category: "GRAPHICS" },
-  { id: 13, title: "A Tale of Two Rivals",                   src: "/images/projects/vjb/13.png", category: "GRAPHICS" },
-  { id: 14, title: "New Media",    src: "/images/projects/vjb/14.png", category: "GRAPHICS" },
+  { id: 1,  title: "Crimes Against Children", src: "/images/projects/vjb/1.png",  category: "GRAPHICS",  url: "https://www.instagram.com/p/DRADorZju6c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 2,  title: "How Ivory Coast Voted",                                     src: "/images/projects/vjb/2.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DQYoN5JAih7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 3,  title: "Hausa Day",                                                  src: "/images/projects/vjb/3.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DQYoN5JAih7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 4,  title: "Ramadan Kareem",                                             src: "/images/projects/vjb/4.png",  category: "GRAPHICS", url: "https://www.instagram.com/reel/DGn8V07sHS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 5,  title: "Foreign Aid in Africa",      src: "/images/projects/vjb/5.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DGnunhQsnBL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 6,  title: "UK's Immigration Policy?",   src: "/images/projects/vjb/6.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DJuN_Ifhlxc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 7,  title: "Eid Mubarak",                                                src: "/images/projects/vjb/7.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DHz53dwsMOd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 8,  title: "The Crisis in Sudan",               src: "/images/projects/vjb/8.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DIeTVUuss5X/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 9,  title: "Sudan Civil War: Key Events",                                src: "/images/projects/vjb/9.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DHtCUesMp1c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 10, title: "The Golden Boot Race",                       src: "/images/projects/vjb/10.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DMNiL87TFHF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 11, title: "African Women Jailed",         src: "/images/projects/vjb/11.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHdLIMoRC4M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 12, title: "Health Workers in Ethiopia",    src: "/images/projects/vjb/12.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DJ9jcLhM2Ck/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==https://www.bbc.com/YOUR-LINK-1" },
+  { id: 13, title: "A Tale of Two Rivals",                   src: "/images/projects/vjb/13.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHvt75nRBkS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+  { id: 14, title: "New Media",    src: "/images/projects/vjb/14.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DLcSd3APweU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
 ];
 
 const brandingProjects = [
@@ -228,7 +228,13 @@ letterSpacing: "0.3em",
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-20">
                 {editorialPosts.map((post, i) => (
                   <Reveal key={post.id} delay={i * 0.03}>
-                    <div className="group relative overflow-hidden" style={{ aspectRatio: "1/1" }}>
+                    <a 
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden block" 
+                    style={{ aspectRatio: "1/1" }}
+                    >
 
                         {/* Image — desaturated at rest, colour on hover */}
                         <div
@@ -316,7 +322,7 @@ letterSpacing: "0.3em",
                         </p>
                         </div>
 
-                        </div>
+                    </a>
                   </Reveal>
                 ))}
               </div>

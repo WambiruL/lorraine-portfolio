@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Work",     href: "#work" },
-  // { label: "Projects", href: "#projects" },
+  // { label: "Work",     href: "#work" },
+  { label: "Projects", href: "#projects" },
   { label: "Process",  href: "#process" },
   { label: "About",    href: "#about" },
   { label: "Contact",  href: "#contact" },
@@ -81,7 +81,7 @@ export default function Navbar() {
                 <button
                   onClick={() => handleNavClick(link.href)}
                   data-hover
-                  className="relative group text-[11px] tracking-[0.18em] uppercase transition-colors duration-300"
+                  className="relative group text-[12px] tracking-[0.18em] uppercase transition-colors duration-300"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: activeLink === link.href ? "#899878" : "rgba(228,230,195,0.55)",
