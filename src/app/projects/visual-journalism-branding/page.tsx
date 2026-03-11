@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 import Link from "next/link";
 
 function Reveal({
@@ -67,6 +68,10 @@ const brandingProjects = [
 ];
 
 export default function VisualJournalismPage() {
+    
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const [active, setActive] = useState<Filter>("ALL");
 
   const filters: Filter[] = ["ALL", "GRAPHICS", "BRANDING"];

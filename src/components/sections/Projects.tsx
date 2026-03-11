@@ -32,6 +32,7 @@ function ProjectCard({
     <motion.div
       ref={cardRef}
       style={{
+  
         opacity,
         y,
         borderRadius: "3px",
@@ -49,6 +50,7 @@ function ProjectCard({
         {/* ── Layer 1: Actual image — revealed on hover ── */}
         <div className="absolute inset-0">
           <Image
+          // loading="lazy"
             src={project.coverImage}
             alt={project.title}
             fill
