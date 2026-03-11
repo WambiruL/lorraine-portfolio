@@ -233,7 +233,7 @@ letterSpacing: "0.3em",
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative overflow-hidden block" 
-                    style={{ aspectRatio: "1/1" }}
+                    style={{ aspectRatio: "1/1", isolation: "isolate", transform: "translateZ(0)"}}
                     >
 
                         {/* Image — desaturated at rest, colour on hover */}
@@ -266,12 +266,14 @@ letterSpacing: "0.3em",
 
                         {/* Frost layer — fades out on hover */}
                         <div
-                            className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
-                            style={{
+                        className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
+                        style={{
                             backdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
                             WebkitBackdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
                             background: "rgba(34,55,40,0.45)",
-                            }}
+                            willChange: "opacity",
+                            isolation: "isolate",
+                        }}
                         />
 
                         {/* Title — always visible at rest, stays on hover */}
