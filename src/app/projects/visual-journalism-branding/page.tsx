@@ -69,11 +69,13 @@ const brandingProjects = [
 ];
 
 export default function VisualJournalismPage() {
-    
+  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState<Filter>("ALL");
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    setMounted(true);
   }, []);
-  const [active, setActive] = useState<Filter>("ALL");
 
   const filters: Filter[] = ["ALL", "GRAPHICS", "BRANDING"];
 
@@ -182,72 +184,81 @@ export default function VisualJournalismPage() {
       {/* ── FILTER + CONTENT ── */}
       <div className="max-w-6xl mx-auto px-6 lg:px-12 py-20">
 
-        {/* Filter pills */}
-        <Reveal>
-          <div className="flex items-center gap-3 mb-16">
-            {filters.map((f) => (
-              <button
-                key={f}
-                onClick={() => setActive(f)}
-                className="relative px-6 py-2.5 transition-colors duration-300"
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  fontSize: "0.6rem",
-                  letterSpacing: "0.25em",
-                  textTransform: "uppercase" as const,
-                  color: active === f ? "var(--ink)" : "rgba(228,230,195,0.4)",
-                  background: active === f ? "var(--moss)" : "transparent",
-                  border: active === f ? "1px solid var(--moss)" : "1px solid rgba(137,152,120,0.2)",
-                  cursor: "pointer",
-                }}
-              >
-                {f}
-              </button>
-            ))}
+        {!mounted && (
+          <div className="flex items-center justify-center py-32">
+            <div
+              className="w-px h-16 animate-pulse"
+              style={{ background: "var(--moss)" }}
+            />
           </div>
-        </Reveal>
+        )}
 
-        {/* ── GRAPHICS GRID ── */}
-        {/* <AnimatePresence> */}
-          {showGraphics && (
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              transition={{ duration: 0.4 }}
-            >
-              {active === "ALL" && (
-                <p
-                  className="mb-8"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.75rem",
-letterSpacing: "0.3em",
-                    textTransform: "uppercase" as const,
-                    color: "rgba(228,230,195,0.2)",
-                  }}
-                >
-                  ── Editorial Graphics
-                </p>
-              )}
+        {mounted && (
+          <>
+            {/* Filter pills */}
+            <Reveal>
+              <div className="flex items-center gap-3 mb-16">
+                {filters.map((f) => (
+                  <button
+                    key={f}
+                    onClick={() => setActive(f)}
+                    className="relative px-6 py-2.5 transition-colors duration-300"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.6rem",
+                      letterSpacing: "0.25em",
+                      textTransform: "uppercase" as const,
+                      color: active === f ? "var(--ink)" : "rgba(228,230,195,0.4)",
+                      background: active === f ? "var(--moss)" : "transparent",
+                      border: active === f ? "1px solid var(--moss)" : "1px solid rgba(137,152,120,0.2)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {f}
+                  </button>
+                ))}
+              </div>
+            </Reveal>
 
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-20">
-                {editorialPosts.map((post, i) => (
-                  <Reveal key={post.id} delay={i * 0.03}>
-                    <a 
-                    href={post.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative overflow-hidden block" 
-                    style={{ aspectRatio: "1/1", isolation: "isolate", transform: "translateZ(0)"}}
-                    >
+            {/* ── GRAPHICS GRID ── */}
+            {showGraphics && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                transition={{ duration: 0.4 }}
+              >
+                {active === "ALL" && (
+                  <p
+                    className="mb-8"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.3em",
+                      textTransform: "uppercase" as const,
+                      color: "rgba(228,230,195,0.2)",
+                    }}
+                  >
+                    ── Editorial Graphics
+                  </p>
+                )}
 
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-20">
+                  {editorialPosts.map((post, i) => (
+                    <Reveal key={post.id} delay={i * 0.03}>
+                      
+                      <a  href={post.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative overflow-hidden block"
+                        style={{ aspectRatio: "1/1", isolation: "isolate", transform: "translateZ(0)" }}
+                      >
                         {/* Image — desaturated at rest, colour on hover */}
                         <div
-                            className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                            style={{ background: "var(--forest)" }}
+                          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+                          style={{ background: "var(--forest)" }}
                         >
-                            <img
+                          <img
                             src={post.src}
                             alt={post.title}
                             loading="lazy"
@@ -256,211 +267,186 @@ letterSpacing: "0.3em",
                             onMouseEnter={(e) => ((e.target as HTMLImageElement).style.filter = "grayscale(0%)")}
                             onMouseLeave={(e) => ((e.target as HTMLImageElement).style.filter = "grayscale(100%)")}
                             onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                            />
-                            {/* Placeholder number */}
-                            <div
+                          />
+                          {/* Placeholder number */}
+                          <div
                             className="absolute inset-0 flex items-center justify-center pointer-events-none"
                             style={{
-                                fontFamily: "var(--font-mono)",
-                                fontSize: "0.55rem",
-                                color: "rgba(228,230,195,0.15)",
-                                letterSpacing: "0.3em",
+                              fontFamily: "var(--font-mono)",
+                              fontSize: "0.55rem",
+                              color: "rgba(228,230,195,0.15)",
+                              letterSpacing: "0.3em",
                             }}
-                            >
+                          >
                             {String(post.id).padStart(2, "0")}
-                            </div>
+                          </div>
                         </div>
 
                         {/* Frost layer — fades out on hover */}
                         <div
-                        className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
-                        style={{
+                          className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
+                          style={{
                             backdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
                             WebkitBackdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
                             background: "rgba(34,55,40,0.45)",
                             willChange: "opacity",
                             isolation: "isolate",
-                        }}
+                          }}
                         />
 
-                        {/* Title — always visible at rest, stays on hover */}
                         {/* Title — centred, editorial styled */}
                         <div
-                        className="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none"
-                        style={{ background: "linear-gradient(to top, rgba(20,45,28,0.92) 0%, rgba(20,45,28,0.4) 100%)" }}
+                          className="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none"
+                          style={{ background: "linear-gradient(to top, rgba(20,45,28,0.92) 0%, rgba(20,45,28,0.4) 100%)" }}
                         >
-                        {/* Title */}
-                        <p
+                          <p
                             className="text-center transition-opacity duration-500 group-hover:opacity-0 mb-3"
                             style={{
-                            fontFamily: "var(--font-display)",
-                            fontSize: "clamp(0.85rem, 1.5vw, 1.05rem)",
-                            fontWeight: 300,
-                            fontStyle: "italic",
-                            lineHeight: 1.4,
-                            color: "var(--sage)",
-                            opacity:0.7,
-                            letterSpacing: "0.01em",
+                              fontFamily: "var(--font-display)",
+                              fontSize: "clamp(0.85rem, 1.5vw, 1.05rem)",
+                              fontWeight: 300,
+                              fontStyle: "italic",
+                              lineHeight: 1.4,
+                              color: "var(--sage)",
+                              opacity: 0.7,
+                              letterSpacing: "0.01em",
                             }}
-                        >
+                          >
                             {post.title}
-                        </p>
-
-                        {/* Divider line */}
-                        <div
+                          </p>
+                          <div
                             className="transition-opacity duration-500 group-hover:opacity-0 mb-3"
-                            style={{
-                            width: "24px",
-                            height: "1px",
-                            background: "var(--moss)",
-                            }}
-                        />
-
-                        {/* Click directive */}
-                        <p
+                            style={{ width: "24px", height: "1px", background: "var(--moss)" }}
+                          />
+                          <p
                             className="transition-opacity duration-500 group-hover:opacity-0"
                             style={{
-                            fontFamily: "var(--font-mono)",
-                            fontSize: "0.53rem",
-                            letterSpacing: "0.25em",
-                            textTransform: "uppercase" as const,
-                            color: "var(--moss)",
+                              fontFamily: "var(--font-mono)",
+                              fontSize: "0.53rem",
+                              letterSpacing: "0.25em",
+                              textTransform: "uppercase" as const,
+                              color: "var(--moss)",
                             }}
-                        >
+                          >
                             View Post
-                        </p>
+                          </p>
                         </div>
+                      </a>
+                    </Reveal>
+                  ))}
+                </div>
+              </motion.div>
+            )}
 
-                    </a>
-                  </Reveal>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        {/* </AnimatePresence> */}
+            {/* ── BRANDING CARDS ── */}
+            {showBranding && (
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 16 }}
+                transition={{ duration: 0.4 }}
+              >
+                {active === "ALL" && (
+                  <p
+                    className="mb-8"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.3em",
+                      textTransform: "uppercase" as const,
+                      color: "rgba(228,230,195,0.2)",
+                    }}
+                  >
+                    ── Brand Identity
+                  </p>
+                )}
 
-        {/* ── BRANDING CARDS ── */}
-        {/* <AnimatePresence> */}
-          {showBranding && (
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              transition={{ duration: 0.4 }}
-            >
-              {active === "ALL" && (
-                <p
-                  className="mb-8"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.75rem",
-letterSpacing: "0.3em",
-                    textTransform: "uppercase" as const,
-                    color: "rgba(228,230,195,0.2)",
-                  }}
-                >
-                  ── Brand Identity
-                </p>
-              )}
-
-              <div className="grid md:grid-cols-2 gap-6">
-                {brandingProjects.map((project, i) => (
-                  <Reveal key={project.slug} delay={i * 0.08}>
-                    <Link
+                <div className="grid md:grid-cols-2 gap-6">
+                  {brandingProjects.map((project, i) => (
+                    <Reveal key={project.slug} delay={i * 0.08}>
+                      <Link
                         href={`/projects/visual-journalism-branding/${project.slug}`}
                         className="group block relative overflow-hidden"
                         style={{ aspectRatio: "4/3" }}
-                        >
+                      >
                         {/* Cover image — colour always retained */}
                         <div
-                            className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                            style={{ background: project.bg }}
+                          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+                          style={{ background: project.bg }}
                         >
-                            <img
+                          <img
                             src={project.src}
                             alt={project.title}
                             loading="lazy"
                             className="w-full h-full object-cover transition-all duration-700"
                             style={{ opacity: 0.75 }}
                             onError={(e) => {
-                                (e.target as HTMLImageElement).style.display = "none";
+                              (e.target as HTMLImageElement).style.display = "none";
                             }}
-                            />
+                          />
                         </div>
 
-                        {/* Frost layer — fades out on hover, tinted with project accent */}
+                        {/* Frost layer — fades out on hover */}
                         <div
-                            className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
-                            style={{
+                          className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
+                          style={{
                             backdropFilter: "blur(20px) brightness(0.55)",
                             WebkitBackdropFilter: "blur(20px) brightness(0.6)",
                             background: `${project.bg}99`,
-                            }}
+                          }}
                         />
 
                         {/* Content — centred, fades out with frost */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                            <div className="flex flex-col items-center transition-opacity duration-500 group-hover:opacity-0">
-                            {/* <p
-                                className="mb-3 text-center"
-                                style={{
-                                fontFamily: "var(--font-mono)",
-                                fontSize: "0.55rem",
-                                letterSpacing: "0.3em",
-                                textTransform: "uppercase" as const,
-                                color: project.accent,
-                                }}
-                            >
-                                Brand Identity
-                            </p> */}
+                          <div className="flex flex-col items-center transition-opacity duration-500 group-hover:opacity-0">
                             <h3
-                                className="text-center mb-3"
-                                style={{
+                              className="text-center mb-3"
+                              style={{
                                 fontFamily: "var(--font-display)",
                                 fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
                                 fontWeight: 300,
                                 fontStyle: "italic",
                                 color: "var(--sage)",
                                 lineHeight: 1.1,
-                                }}
+                              }}
                             >
-                                {project.title}
+                              {project.title}
                             </h3>
                             <p
-                                className="text-center mb-5"
-                                style={{
+                              className="text-center mb-5"
+                              style={{
                                 fontFamily: "var(--font-body)",
                                 fontSize: "0.85rem",
                                 color: "rgba(228,230,195,0.45)",
-                                }}
+                              }}
                             >
-                                {project.subtitle}
+                              {project.subtitle}
                             </p>
                             <div
-                                className="mb-4"
-                                style={{ width: "24px", height: "1px", background: project.accent }}
+                              className="mb-4"
+                              style={{ width: "24px", height: "1px", background: project.accent }}
                             />
                             <p
-                                style={{
+                              style={{
                                 fontFamily: "var(--font-mono)",
                                 fontSize: "0.59rem",
                                 letterSpacing: "0.1em",
                                 textTransform: "uppercase" as const,
                                 color: project.accent,
-                                }}
+                              }}
                             >
-                                Click to View Identity
+                              Click to View Identity
                             </p>
-                            </div>
+                          </div>
                         </div>
-
-                        </Link>
-                  </Reveal>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        {/* </AnimatePresence> */}
+                      </Link>
+                    </Reveal>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </>
+        )}
 
       </div>
 

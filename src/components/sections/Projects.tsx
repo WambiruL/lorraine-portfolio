@@ -45,7 +45,7 @@ function ProjectCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <Link href={`/projects/${project.slug}`} className="block w-full h-full">
+      <Link href={`/projects/${project.slug}`} className="block w-full h-full" prefetch={true}>
 
         {/* ── Layer 1: Actual image — revealed on hover ── */}
         <div className="absolute inset-0">

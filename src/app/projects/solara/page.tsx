@@ -125,7 +125,9 @@ export default function SolaraPage() {
       </div>
 
       {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section ref={heroRef} className="relative h-screen w-full overflow-hidden flex items-end">
+      <section 
+      ref={heroRef} 
+      className="relative min h-screen flex flex-col justify-end pb-24 pt-40 overflow-hidden">
         <motion.div style={{ scale: heroScale }} className="absolute inset-0">
           <div
             className="absolute inset-0"
@@ -182,7 +184,7 @@ export default function SolaraPage() {
             </span>
           </motion.div>
 
-          <div className="overflow-hidden mb-4">
+          {/* <div className="overflow-hidden mb-4">
             <motion.h1
               initial={{ y: "100%" }}
               animate={{ y: 0 }}
@@ -197,25 +199,25 @@ export default function SolaraPage() {
             >
               Solara
             </motion.h1>
-          </div>
+          </div> */}
 
-          <div className="overflow-hidden">
-            <motion.p
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.52 }}
+          <Reveal delay={0.1}>
+            <h1
               style={{
                 fontFamily: "var(--font-display)",
-                fontSize: "clamp(1.6rem, 3.5vw, 3rem)",
+                fontSize: "clamp(2.8rem, 6vw, 6rem)",
                 fontWeight: 300,
-                fontStyle: "italic",
-                lineHeight: 1,
-                color: "rgba(149,213,178,0.7)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.02em",
+                color: "var(--sage)",
+                maxWidth: "820px",
               }}
             >
-              AI Wellbeing Companion for Students
-            </motion.p>
-          </div>
+              AI - Powered {" "}
+              <em style={{ color: "rgba(149,213,178,0.8)" }}>Well-being
+              Platform</em> {" "} For Students
+            </h1>
+          </Reveal>
         </motion.div>
 
         {/* Metadata strip */}
@@ -593,7 +595,7 @@ export default function SolaraPage() {
       onMouseLeave={(e) => (e.currentTarget.style.color = "#95D5B2")}
     >
       <span className="relative z-10">View on Behance</span>
-      
+
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
             <path d="M4 12L12 4M12 4H6M12 4v6"/>
         </svg>        
