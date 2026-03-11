@@ -5,8 +5,8 @@ export default function SoftCursor() {
   useCursor();
   return (
     <>
-      <div className="cursor-dot" />
-      <div className="cursor-ring" />
+      <div className="cursor-dot lg:block hidden" />
+      <div className="cursor-ring lg:block hidden" />
     </>
   );
 }

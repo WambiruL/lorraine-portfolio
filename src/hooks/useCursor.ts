@@ -3,6 +3,9 @@ import { useEffect } from "react";
 
 export function useCursor() {
   useEffect(() => {
+  // Don't run on touch devices
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
     const dot  = document.querySelector(".cursor-dot")  as HTMLElement | null;
     const ring = document.querySelector(".cursor-ring") as HTMLElement | null;
     if (!dot || !ring) return;
