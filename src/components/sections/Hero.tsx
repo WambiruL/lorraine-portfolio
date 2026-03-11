@@ -237,7 +237,7 @@ useEffect(() => {
           initial={{ opacity: 0, scale: 1.04 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-          className="relative hidden lg:block justify-end items-center h-full"
+          className="relative hidden lg:flex justify-end items-center h-full"
         >
           <motion.div
             style={{ y: imageY }}
