@@ -244,6 +244,7 @@ letterSpacing: "0.3em",
                             <img
                             src={post.src}
                             alt={post.title}
+                            loading="lazy"
                             className="w-full h-full object-cover transition-all duration-700"
                             style={{ filter: "grayscale(100%)" }}
                             onMouseEnter={(e) => ((e.target as HTMLImageElement).style.filter = "grayscale(0%)")}
@@ -372,6 +373,7 @@ letterSpacing: "0.3em",
                             <img
                             src={project.src}
                             alt={project.title}
+                            loading="lazy"
                             className="w-full h-full object-cover transition-all duration-700"
                             style={{ opacity: 0.75 }}
                             onError={(e) => {

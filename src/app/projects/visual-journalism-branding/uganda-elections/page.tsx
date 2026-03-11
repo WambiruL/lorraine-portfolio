@@ -342,6 +342,7 @@ export default function UgandaElectionsPage() {
             >
                 <img
                 src="/images/projects/vjb/uganda/supporting.png"
+                loading="lazy"
                 alt="supporting"
                 className="w-full h-full"
                 style={{ objectFit: "contain", padding: "24px" }}

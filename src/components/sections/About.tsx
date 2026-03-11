@@ -448,9 +448,9 @@ export default function About() {
                 onMouseLeave={e => (e.currentTarget.style.color = "rgba(228,230,195,0.3)")}
               >
                 View Behance
-                <span className="transition-transform duration-300 group-hover:translate-x-1 inline-block">
-                  ↗
-                </span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M4 12L12 4M12 4H6M12 4v6"/>
+                </svg>
               </a>
             </motion.div>
           </div>
