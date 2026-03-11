@@ -20,8 +20,9 @@ function Reveal({
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 28 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}
@@ -43,7 +44,7 @@ const editorialPosts = [
   { id: 9,  title: "Sudan Civil War: Key Events",                                src: "/images/projects/vjb/9.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DHtCUesMp1c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
   { id: 10, title: "The Golden Boot Race",                       src: "/images/projects/vjb/10.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DMNiL87TFHF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
   { id: 11, title: "African Women Jailed",         src: "/images/projects/vjb/11.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHdLIMoRC4M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 12, title: "Health Workers in Ethiopia",    src: "/images/projects/vjb/12.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DJ9jcLhM2Ck/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==https://www.bbc.com/YOUR-LINK-1" },
+  { id: 12, title: "Health Workers in Ethiopia",    src: "/images/projects/vjb/12.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DJ9jcLhM2Ck/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
   { id: 13, title: "A Tale of Two Rivals",                   src: "/images/projects/vjb/13.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHvt75nRBkS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
   { id: 14, title: "New Media",    src: "/images/projects/vjb/14.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DLcSd3APweU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
 ];
