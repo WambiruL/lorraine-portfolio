@@ -326,7 +326,7 @@ letterSpacing: "0.3em",
                             color: "var(--moss)",
                             }}
                         >
-                            Click to view Post
+                            View Post
                         </p>
                         </div>
 
