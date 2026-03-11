@@ -143,7 +143,8 @@ function ProjectCard({
                 className="text-moss/50 text-[0.6em] tracking-[0.3em] uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
-                Hover to reveal
+                 <span className="hidden lg:inline">Hover to reveal</span>
+                 <span className="lg:hidden">Tap to reveal</span>
               </span>
               <span className="w-4 h-px bg-moss/40" />
             </motion.div>
