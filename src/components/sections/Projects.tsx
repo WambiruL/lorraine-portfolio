@@ -1,8 +1,9 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { projects } from "@/lib/projects";
 
 // ── Frost texture SVG as data URI ──────────────────────────────
@@ -321,6 +322,14 @@ const INITIAL_SHOW = 4;
 export default function Projects() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [showAll, setShowAll] = useState(false);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    projects.forEach((p) => {
+      router.prefetch(`/projects/${p.slug}`);
+    });
+  }, [router]);
 
   const hasMore = projects.length > INITIAL_SHOW;
   const visibleProjects = showAll ? projects : projects.slice(0, INITIAL_SHOW);
