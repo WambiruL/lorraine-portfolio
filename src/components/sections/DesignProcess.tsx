@@ -298,7 +298,7 @@ export default function DesignProcess() {
                 {/* Right CTA */}
                 <div className="flex-shrink-0">
                   <div
-                    className="group/btn relative overflow-hidden flex items-center gap-3 px-7 py-4 transition-all duration-500"
+                    className="group/btn relative overflow-hidden flex items-center justify-center gap-3 px-7 py-4 transition-all duration-500"
                     style={{
                       border: "1px solid rgba(137,152,120,0.35)",
                       color: "var(--moss)",

@@ -118,7 +118,7 @@ useEffect(() => {
       </motion.div>
 
       {/* ── Main grid ── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-8 lg:px-16 grid lg:grid-cols-2 items-center min-h-screen pt-24 pb-16">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 lg:px-16 grid lg:grid-cols-2 items-center min-h-screen pt-28 pb-24 lg:pt-24 lg:pb-16">
 
         {/* ── Left: Text ── */}
         <motion.div
@@ -329,7 +329,7 @@ useEffect(() => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.6 }}
-          className="lg:hidden relative w-full h-64 mt-12 overflow-hidden"
+          className="lg:hidden relative w-full h-[380px] mt-10 overflow-hidden rounded-sm"
         >
           <Image
             src="/images/lorraine.png"
@@ -340,7 +340,7 @@ useEffect(() => {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to top, #121113 20%, transparent 80%)" }}
+            style={{ background: "linear-gradient(to top, #121113 10%, transparent 70%)" }}
           />
         </motion.div>
 
