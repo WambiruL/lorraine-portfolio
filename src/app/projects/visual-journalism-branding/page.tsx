@@ -148,7 +148,7 @@ export default function VisualJournalismPage() {
                 maxWidth: "820px",
               }}
             >
-              Visual Journalism{" "}
+              Visual Design{" "}
               <em style={{ color: "rgba(228,230,195,0.45)" }}>&</em>{" "}
               Branding
             </h1>
