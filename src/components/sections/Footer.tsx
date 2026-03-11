@@ -217,9 +217,9 @@ export default function Footer() {
                 >
                   {s.label}
                 </span>
-                <span className="text-[10px] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 inline-block">
-                  ↗
-                </span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M4 12L12 4M12 4H6M12 4v6"/>
+                </svg>
               </a>
             ))}
           </div>

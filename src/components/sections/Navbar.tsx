@@ -195,7 +195,15 @@ export default function Navbar() {
                     >
                       {link.label}
                     </span>
-                    <span className="text-moss/40 group-hover:text-moss transition-colors text-sm">↗</span>
+                    {/* Right arrow */}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M4 12L12 4M12 4H6M12 4v6"/>
+                </svg>
+
+                {/* Left arrow */}
+                {/* <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M13 8H3M7 4L3 8l4 4"/>
+                </svg> */}
                   </motion.button>
                 ))}
               </nav>

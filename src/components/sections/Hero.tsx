@@ -340,7 +340,7 @@ useEffect(() => {
           />
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to top, #121113 10%, transparent 70%)" }}
+            // style={{ background: "linear-gradient(to top, #121113 10%, transparent 70%)" }}
           />
         </motion.div>
 
