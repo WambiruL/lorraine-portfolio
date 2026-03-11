@@ -116,7 +116,7 @@ export default function VisualJournalismPage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(6rem, 18vw, 18rem)",
-                fontWeight: 300,
+                fontWeight: 700,
                 letterSpacing: "0.15em",
                 color: "rgba(149,213,178,0.04)",
                 lineHeight: 1,

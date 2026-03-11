@@ -80,14 +80,14 @@ export default function Footer() {
                 color: "var(--cream)",
               }}
             >
-              {"Let's design"}
+              {"Good work"}
               <br />
-              {"something "}
+              {"starts "}
               <span style={{ fontStyle: "italic", color: "var(--moss)" }}>
-                meaningful
+                with a
               </span>
               <br />
-              together.
+              conversation.
             </h2>
           </div>
 

@@ -141,7 +141,7 @@ export default function SolaraPage() {
               style={{
                 fontFamily: "var(--font-display)",
                 fontSize: "clamp(8rem, 22vw, 22rem)",
-                fontWeight: 300,
+                fontWeight: 700,
                 letterSpacing: "0.15em",
                 color: "rgba(149,213,178,0.04)",
                 lineHeight: 1,
