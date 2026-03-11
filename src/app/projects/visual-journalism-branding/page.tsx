@@ -202,7 +202,7 @@ export default function VisualJournalismPage() {
         </Reveal>
 
         {/* ── GRAPHICS GRID ── */}
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           {showGraphics && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -328,10 +328,10 @@ letterSpacing: "0.3em",
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
 
         {/* ── BRANDING CARDS ── */}
-        <AnimatePresence>
+        {/* <AnimatePresence> */}
           {showBranding && (
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -450,7 +450,7 @@ letterSpacing: "0.3em",
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
 
       </div>
 
