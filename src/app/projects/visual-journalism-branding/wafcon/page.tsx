@@ -62,7 +62,7 @@ export default function WafconPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.8rem, 6vw, 6rem)", fontWeight: 300, lineHeight: 1.05, color: "var(--cream)", maxWidth: "820px" }}>
-              WAFCON 2024 —{" "}
+              WAFCON 2024{" "}
               <em style={{ color: ACCENT_LIGHT }}>the identity behind Africa's biggest women's tournament.</em>
             </h1>
           </Reveal>
@@ -147,8 +147,8 @@ export default function WafconPage() {
           captures the sport's dynamic energy and spirit of empowerment.
         </p>
         <p className="mt-6" style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.85, color: "rgba(242,242,242,0.4)" }}>
-          Central to the visual identity is the WAFCON logo — a football with a
-          pattern that pays symbolic tribute to Morocco, this year's host nation.
+          Central to the visual identity is the WAFCON logo, a football with a
+          pattern that pays symbolic tribute to Morocco, that year's host nation.
         </p>
       </div>
 
@@ -212,8 +212,8 @@ export default function WafconPage() {
       ].map((c) => (
         <div key={c.hex}>
           <div className="w-full mb-3" style={{ height: "80px", background: c.hex, border: "1px solid rgba(255,255,255,0.06)" }} />
-          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--cream)", marginBottom: "2px" }}>{c.hex}</p>
-          <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--cream)", marginBottom: "2px" }}>{c.name}</p>
+          <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--sage)", marginBottom: "2px" }}>{c.hex}</p>
+          <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--sage)", marginBottom: "2px" }}>{c.name}</p>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(242,242,242,0.35)" }}>{c.role}</p>
         </div>
       ))}
@@ -225,8 +225,8 @@ export default function WafconPage() {
     <div className="grid grid-cols-3 gap-4">
       <div>
         <div className="w-full mb-3" style={{ height: "80px", background: "#eb0000", border: "1px solid rgba(255,255,255,0.06)" }} />
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--cream)", marginBottom: "2px" }}>#eb0000</p>
-        <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--cream)", marginBottom: "2px" }}>Scarlet</p>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--sage)", marginBottom: "2px" }}>#eb0000</p>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--sage)", marginBottom: "2px" }}>Scarlet</p>
         <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(242,242,242,0.35)" }}>Celebration & energy</p>
       </div>
       <div className="col-span-2 flex items-center p-6" style={{ border: `1px solid ${ACCENT}15`, background: "rgba(46,125,50,0.03)" }}>

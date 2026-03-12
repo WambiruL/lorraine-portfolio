@@ -100,6 +100,8 @@ export default function SolaraPage() {
   });
   const heroScale   = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const PP = "#95D5B2";
+  const PP_LIGHT = "rgba(149,213,178,0.2)";
 
   return (
     <main style={{ backgroundColor: "var(--ink)", color: "var(--cream)" }}>
@@ -124,145 +126,105 @@ export default function SolaraPage() {
         </Link>
       </div>
 
-      {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
-      <section 
-      ref={heroRef} 
-      className="relative min h-screen flex flex-col justify-end pb-24 pt-40 overflow-hidden">
-        <motion.div style={{ scale: heroScale }} className="absolute inset-0">
-          <div
-            className="absolute inset-0"
-            style={{ background: "linear-gradient(135deg, #1B4332 0%, #121113 55%, #0d1f17 100%)" }}
-          />
-          <div
-            className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none select-none"
-            aria-hidden
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(8rem, 22vw, 22rem)",
-                fontWeight: 700,
-                letterSpacing: "0.15em",
-                color: "rgba(149,213,178,0.04)",
-                lineHeight: 1,
-              }}
+      {/* ── HERO ── */}
+            <section
+              ref={heroRef}
+              className="relative min-h-screen flex flex-col justify-end pb-24 pt-40 overflow-hidden"
+              style={{  background: "linear-gradient(135deg, #1B4332 0%, #121113 55%, #0d1f17 100%)"}}
             >
-              SOLARA
-            </span>
-          </div>
-        </motion.div>
-
-        <div
-          className="absolute bottom-0 left-0 right-0 h-2/3 pointer-events-none z-10"
-          style={{ background: "linear-gradient(to top, #121113 0%, transparent 100%)" }}
-        />
-
-        <motion.div
-          style={{ opacity: heroOpacity }}
-          className="relative z-20 w-full max-w-6xl mx-auto px-8 lg:px-16 pb-20"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-10"
-            style={{
-              background: "rgba(27,67,50,0.7)",
-              border: "1px solid rgba(149,213,178,0.2)",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: "0.58rem",
-                letterSpacing: "0.3em",
-                textTransform: "uppercase" as const,
-                color: "#95D5B2",
-              }}
-            >
-              UX/UI Case Study
-            </span>
-          </motion.div>
-
-          {/* <div className="overflow-hidden mb-4">
-            <motion.h1
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(4rem, 9vw, 8rem)",
-                fontWeight: 300,
-                lineHeight: 0.95,
-                color: "var(--cream)",
-              }}
-            >
-              Solara
-            </motion.h1>
-          </div> */}
-
-          <Reveal delay={0.1}>
-            <h1
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(2.8rem, 6vw, 6rem)",
-                fontWeight: 300,
-                lineHeight: 1.05,
-                letterSpacing: "-0.02em",
-                color: "var(--sage)",
-                maxWidth: "820px",
-              }}
-            >
-              AI - Powered {" "}
-              <em style={{ color: "rgba(149,213,178,0.8)" }}>Well-being
-              Platform</em> {" "} For Students
-            </h1>
-          </Reveal>
-        </motion.div>
-
-        {/* Metadata strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-[-30px] left-0 right-0 z-30"
-          style={{ borderTop: "1px solid rgba(137,152,120,0.12)" }}
-        >
-          <div
-            className="max-w-6xl mx-auto px-8 lg:px-16 grid grid-cols-2 lg:grid-cols-4"
-            style={{ backgroundColor: "rgba(18,17,19,0.9)", backdropFilter: "blur(12px)" }}
-          >
-            {[
-              { label: "Role",  value: "Lead Product Designer" },
-              { label: "Type",  value: "UX/UI · Mobile App" },
-              { label: "Year",  value: "2024" },
-              { label: "Tools", value: "Figma · Prototyping" },
-            ].map((m, i) => (
-              <div
-                key={m.label}
-                className="py-6 px-2 lg:px-8 first:pl-0"
-                style={{ borderRight: i < 3 ? "1px solid rgba(137,152,120,0.1)" : "none" }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    fontSize: "0.55rem",
-                    letterSpacing: "0.3em",
-                    textTransform: "uppercase" as const,
-                    color: "var(--moss)",
-                    marginBottom: "8px",
-                  }}
-                >
-                  {m.label}
-                </p>
-                <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "rgba(228,230,195,0.7)" }}>
-                  {m.value}
-                </p>
+              {/* Ghost wordmark */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+                <motion.span
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(6rem, 18vw, 18rem)",
+                      fontWeight: 700,
+                      letterSpacing: "0.15em",
+                      color: "rgba(149,213,178,0.04)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    SOLARA
+                  </motion.span>
               </div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      
+              <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 w-full">
+                {/* Category pill */}
+                <Reveal>
+                  <span
+                    className="inline-flex items-center gap-2 px-4 py-2 mb-10"
+                    style={{
+                      border: `1px solid ${PP}40`,
+                      fontFamily: "var(--font-mono)",
+                      fontSize: "0.6rem",
+                      letterSpacing: "0.3em",
+                      textTransform: "uppercase" as const,
+                      color: PP,
+                    }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: PP }} />
+                    UX / UI Design · Health Tech
+                  </span>
+                </Reveal>
+      
+                <Reveal delay={0.1}>
+                  <h1
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(2.8rem, 6vw, 6rem)",
+                      fontWeight: 300,
+                      lineHeight: 1.05,
+                      letterSpacing: "-0.02em",
+                      color: "var(--cream)",
+                      maxWidth: "820px",
+                    }}
+                  >
+                    Designing for{" "}
+                    <em style={{ color: PP_LIGHT }}>student wellbeing</em>{" "}
+                    in the age of burnout.
+                  </h1>
+                </Reveal>
+      
+                {/* Metadata strip */}
+                <Reveal delay={0.2}>
+                  <div
+                    className="mt-16 pt-8 grid grid-cols-2 md:grid-cols-4 gap-8"
+                    style={{ borderTop: "1px solid rgba(0,136,149,0.15)" }}
+                  >
+                    {[
+                      { label: "Role", value: "Lead Designer" },
+                      { label: "Type", value: "Mobile App" },
+                      { label: "Year", value: "2024" },
+                      { label: "Tools", value: "Figma · Nunito" },
+                    ].map((m) => (
+                      <div key={m.label}>
+                        <p
+                          style={{
+                            fontFamily: "var(--font-mono)",
+                            fontSize: "0.55rem",
+                            letterSpacing: "0.3em",
+                            textTransform: "uppercase" as const,
+                            color: "rgba(228,230,195,0.3)",
+                            marginBottom: "8px",
+                          }}
+                        >
+                          {m.label}
+                        </p>
+                        <p
+                          style={{
+                            fontFamily: "var(--font-body)",
+                            fontSize: "0.95rem",
+                            color: "var(--cream)",
+                          }}
+                        >
+                          {m.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </Reveal>
+              </div>
+            </section>
 
       {/* ══ OVERVIEW ══════════════════════════════════════════════════════════ */}
       <section className="max-w-6xl mx-auto px-8 lg:px-16 pt-36 pb-0">
@@ -650,12 +612,12 @@ export default function SolaraPage() {
             {
                 src: "/images/projects/solara/3.png",
                 label: "01 — Splash & Identity",
-                caption: "The launch screen establishes Solara's identity — calm, botanical, deeply green. The open-book logomark communicates reflection and growth before a word is read.",
+                caption: "The launch screen establishes Solara's identity, calm, botanical, deeply green. The open-book logomark communicates reflection and growth before a word is read.",
             },
             {
                 src: "/images/projects/solara/15.png",
                 label: "02 — Onboarding",
-                caption: "Three screens, three value propositions. Students understand what Solara offers before committing to sign-up — reducing drop-off at the most critical moment.",
+                caption: "Three screens, three value propositions. Students understand what Solara offers before committing to sign-up, reducing drop-off at the most critical moment.",
             },
             {
                 src: "/images/projects/solara/13.png",
@@ -665,7 +627,7 @@ export default function SolaraPage() {
             {
             src: "/images/projects/solara/12.png",
             label: "04 — Journal",
-            caption: "A private, judgement-free space to write freely. Daily prompts lower the barrier to starting. Every entry is completely private and encrypted — and when you're done, Solara offers to reflect on it with you.",
+            caption: "A private, judgement-free space to write freely. Daily prompts lower the barrier to starting. Every entry is completely private and encrypted, and when you're done, Solara offers to reflect on it with you.",
             },
             {
             src: "/images/projects/solara/4.png",
@@ -818,11 +780,9 @@ export default function SolaraPage() {
               maxWidth: "700px",
             }}
           >
-            Solara is a complete, publication-ready UX case study with
-            full-fidelity prototypes across every core flow. It demonstrates my
-            ability to identify a genuine human problem, design a coherent system
+            Solara demonstrates my ability to identify a genuine human problem, design a coherent system
             response, and deliver a product that feels considered at every
-            layer — from macro IA down to a mood selector's active state.
+            layer from macro IA.
           </p>
 
           <p
@@ -835,7 +795,7 @@ export default function SolaraPage() {
             }}
           >
             If I were to continue, the next phase would add crisis escalation
-            pathways — routing users to human support when the AI detects
+            pathways, routing users to human support when the AI detects
             language suggesting acute distress. The groundwork already exists in
             the Resources section. The product knows where it wants to go.
           </p>

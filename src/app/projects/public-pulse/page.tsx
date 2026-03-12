@@ -162,7 +162,7 @@ export default function PublicPulsePage() {
                 { label: "Role", value: "Lead Designer" },
                 { label: "Type", value: "Web Platform" },
                 { label: "Year", value: "2024" },
-                { label: "Tools", value: "Figma · Roboto · Teal System" },
+                { label: "Tools", value: "Figma · Roboto" },
               ].map((m) => (
                 <div key={m.label}>
                   <p
@@ -263,7 +263,7 @@ export default function PublicPulsePage() {
                 <em style={{ color: PP_LIGHT }}>governments should listen.</em>
               </h2>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "1.05rem", lineHeight: 1.9, color: "rgba(228,230,195,0.6)" }}>
-                Public Pulse is an AI-powered civic feedback platform designed for two distinct audiences simultaneously — the citizen filing a complaint about a broken road, and the government official trying to understand what their county most urgently needs.
+                Public Pulse is an AI-powered civic feedback platform designed for two distinct audiences simultaneously, the citizen filing a complaint and the government official trying to understand what their county most urgently needs.
               </p>
             </div>
             <div
@@ -294,7 +294,7 @@ export default function PublicPulsePage() {
                   color: "var(--cream)",
                 }}
               >
-                "Citizens face daily challenges with public services, but existing channels for reporting issues are fragmented, slow, and lack transparency."
+                Citizens face daily challenges with public services, but existing channels for reporting issues are fragmented, slow, and lack transparency.
               </p>
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function PublicPulsePage() {
             {
               number: "01",
               title: "Fragmented channels",
-              body: "Citizens had no unified place to report issues. A pothole, a water shortage, an illegal structure — each went to a different ministry, phone number, or physical office.",
+              body: "Citizens had no unified place to report issues. A pothole, a water shortage, an illegal structure, each went to a different ministry, phone number, or physical office.",
             },
             {
               number: "02",
@@ -407,27 +407,27 @@ export default function PublicPulsePage() {
           {
             number: "01",
             title: "Discover",
-            body: "I mapped the existing landscape of civic reporting — what existed, what failed, and why. I interviewed citizens who had tried to report issues and government staff who received them. The gap between both experiences was stark. Citizens felt unheard; officials felt buried in noise.",
+            body: "I mapped the existing landscape of civic reporting, what existed, what failed, and why. I interviewed citizens who had tried to report issues and government staff who received them. The gap between both experiences was stark. Citizens felt unheard; officials felt buried in noise.",
           },
           {
             number: "02",
             title: "Define",
-            body: "Two user personas emerged: the Citizen (frustrated, time-poor, distrustful of institutions) and the Admin (overwhelmed with unstructured data, needing prioritisation tools). Any solution had to serve both meaningfully — or it would serve neither.",
+            body: "Two user personas emerged: the Citizen (frustrated, time-poor, distrustful of institutions) and the Admin (overwhelmed with unstructured data, needing prioritisation tools). Any solution had to serve both meaningfully, or it would serve neither.",
           },
           {
             number: "03",
             title: "Ideate",
-            body: "The conversational reporting model was the key breakthrough. Instead of a cold form, the AI assistant guides citizens through a natural 4-step flow — what happened, where, any evidence, confirmation. It lowered the barrier dramatically while collecting structured data on the backend.",
+            body: "The conversational reporting model was the key breakthrough. Instead of a cold form, the AI assistant guides citizens through a natural 4-step flow, what happened, where, any evidence, confirmation. It lowered the barrier dramatically while collecting structured data on the backend.",
           },
           {
             number: "04",
             title: "Prototype",
-            body: "I built both sides in parallel. The citizen-facing interface needed to feel approachable and human. The admin dashboard needed density and clarity — charts, filters, user management — without feeling overwhelming. Teal carried meaning across both: action, trust, civic responsibility.",
+            body: "I built both sides in parallel. The citizen-facing interface needed to feel approachable and human. The admin dashboard needed density and clarity, charts, filters, user management, without feeling overwhelming.",
           },
           {
             number: "05",
             title: "Validate",
-            body: "Usability testing revealed that the step-by-step progress indicator (Step 1 of 4) significantly reduced user anxiety. Citizens wanted to know they were almost done. On the admin side, the sentiment analysis view became the most-used feature — officials loved seeing public emotion mapped geographically.",
+            body: "Usability testing revealed that the step-by-step progress indicator (Step 1 of 4) significantly reduced user anxiety. Citizens wanted to know they were almost done. On the admin side, the sentiment analysis view became the most-used feature, officials loved seeing public emotion mapped geographically.",
           },
         ].map((stage, i) => (
           <Reveal key={stage.number} delay={0.05}>
@@ -506,7 +506,7 @@ export default function PublicPulsePage() {
                 maxWidth: "780px",
               }}
             >
-              "A form asks. A conversation listens. Replacing the report form with a step-by-step AI assistant wasn't just a UX choice — it was the product's entire value proposition reframed."
+              "A form asks. A conversation listens. Replacing the report form with a step-by-step AI assistant wasn't just a UX choice, it was the product's entire value proposition reframed."
             </p>
           </div>
         </Reveal>
@@ -524,7 +524,7 @@ export default function PublicPulsePage() {
               color: "var(--cream)",
             }}
           >
-            Citizen-facing and admin —{" "}
+            Citizen-facing and admin{" "}
             <em style={{ color: PP_LIGHT }}>designed as one system.</em>
           </h2>
 
@@ -610,12 +610,12 @@ export default function PublicPulsePage() {
           {
             src: "/images/projects/public-pulse/1.png",
             label: "01 — Brand Identity",
-            caption: "The double-P logomark is built from mirrored columns — a visual metaphor for dialogue between citizen and state. The dark navy backdrop positions Public Pulse as serious civic infrastructure, not a startup app.",
+            // caption: "The double-P logomark is built from mirrored columns, a visual metaphor for dialogue between citizen and state. The dark navy backdrop positions Public Pulse as serious civic infrastructure.",
           },
           {
             src: "/images/projects/public-pulse/8.png",
             label: "02 — Home Page",
-            caption: "\"Citizen feedback, finally taken seriously.\" The headline does the political work. The curved image container softens the civic tone without undermining it. One CTA: Join the Conversation.",
+            // caption: "\"Citizen feedback, finally taken seriously.\" The headline does the political work. The curved image container softens the civic tone without undermining it. One CTA: Join the Conversation.",
           },
         ].map((screen, i) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
@@ -626,9 +626,9 @@ export default function PublicPulsePage() {
               <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: PP, paddingTop: "4px" }}>
                 {screen.label}
               </p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.85, color: "rgba(228,230,195,0.5)", maxWidth: "580px" }}>
+              {/* <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.85, color: "rgba(228,230,195,0.5)", maxWidth: "580px" }}>
                 {screen.caption}
-              </p>
+              </p> */}
             </div>
           </Reveal>
         ))}
@@ -653,37 +653,37 @@ export default function PublicPulsePage() {
           {
             src: "/images/projects/public-pulse/10.png",
             label: "03 — AI Assistant",
-            caption: "The entry point for citizens: not a form, a conversation. \"Hi Castell, what would you like to do?\" First-name personalisation makes the platform feel like a service, not a bureaucratic portal. Two paths — Report an Issue or Ask a Question — keep the experience focused.",
+            caption: "The entry point for citizens: not a form, a conversation. Two paths, Report an Issue or Ask a Question, keep the experience focused.",
           },
           {
             src: "/images/projects/public-pulse/13.png",
             label: "04 — Step 1 of 4: Issue Details",
-            caption: "The reporting flow opens with the hardest part: describing what happened. The progress indicator (Step 1 of 4) tells the citizen exactly how much they're committing to. The chat bubble format makes a government form feel like a human conversation.",
+            // caption: "The reporting flow opens with the hardest part: describing what happened. The progress indicator (Step 1 of 4) tells the citizen exactly how much they're committing to. The chat bubble format makes a government form feel like a human conversation.",
           },
           {
             src: "/images/projects/public-pulse/14.png",
             label: "05 — Step 2 of 4: Location",
-            caption: "The AI responds to the citizen's message with empathy — \"That's dangerous. Thanks for pointing it out.\" — before asking for location. This sequence was a deliberate UX decision: acknowledge first, gather data second. It mirrors how a helpful human would actually behave.",
+            // caption: "The AI responds to the citizen's message with empathy — \"That's dangerous. Thanks for pointing it out.\" — before asking for location. This sequence was a deliberate UX decision: acknowledge first, gather data second. It mirrors how a helpful human would actually behave.",
           },
           {
             src: "/images/projects/public-pulse/15.png",
             label: "06 — Step 3 of 4: Evidence",
-            caption: "Optional photo upload — the system moves on whether or not evidence exists. \"No, I don't have any\" is a valid answer. Removing this blocker was critical: many citizens abandoned earlier prototypes when evidence upload felt mandatory.",
+            caption: "Optional photo upload, the system moves on whether or not evidence exists. \"No, I don't have any\" is a valid answer. Removing this blocker was critical: many citizens abandoned earlier prototypes when evidence upload felt mandatory.",
           },
           {
             src: "/images/projects/public-pulse/16.png",
             label: "07 — Step 4 of 4: Escalation",
-            caption: "\"Your report has been escalated. Thank you for your service.\" The word 'service' is intentional — it reframes civic reporting as an act of community contribution, not a complaint. The conversation is now a record. The citizen has been heard.",
+            // caption: "\"Your report has been escalated. Thank you for your service.\" The word 'service' is intentional — it reframes civic reporting as an act of community contribution, not a complaint. The conversation is now a record. The citizen has been heard.",
           },
           {
             src: "/images/projects/public-pulse/19.png",
             label: "08 — Help Center",
-            caption: "A self-serve knowledge base organised by task, not by department. Citizens can find answers to platform questions without opening a new report. The search bar and 7-category grid keep navigation low-friction.",
+            caption: "A self-serve knowledge base. Citizens can find answers to platform questions without opening a new report.",
           },
           {
             src: "/images/projects/public-pulse/20.png",
             label: "09 — Notification Settings",
-            caption: "Fine-grained control over what citizens hear back about — from report escalation to area-wide alerts when a common issue in their neighbourhood is resolved. Transparency built into the settings layer, not bolted on after the fact.",
+            // caption: "Fine-grained control over what citizens hear back about — from report escalation to area-wide alerts when a common issue in their neighbourhood is resolved. Transparency built into the settings layer, not bolted on after the fact.",
           },
         ].map((screen) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
@@ -721,22 +721,22 @@ export default function PublicPulsePage() {
           {
             src: "/images/projects/public-pulse/21.png",
             label: "10 — Admin Dashboard",
-            caption: "2,340 reports. 800 assigned, 540 under review, 1,000 resolved. The headline metrics make the scale of civic engagement immediately legible. Sentiment donut charts and category breakdowns give officials the pattern — not just the noise.",
+            // caption: "2,340 reports. 800 assigned, 540 under review, 1,000 resolved. The headline metrics make the scale of civic engagement immediately legible. Sentiment donut charts and category breakdowns give officials the pattern — not just the noise.",
           },
           {
             src: "/images/projects/public-pulse/22.png",
             label: "11 — User Management",
-            caption: "Full citizen account management with role-based filtering (Citizen, Admin), activity tracking, and report counts per user. The table-plus-filter layout mirrors familiar admin conventions — lowering the learning curve for government staff.",
+            // caption: "Full citizen account management with role-based filtering (Citizen, Admin), activity tracking, and report counts per user. The table-plus-filter layout mirrors familiar admin conventions — lowering the learning curve for government staff.",
           },
           {
             src: "/images/projects/public-pulse/23.png",
             label: "12 — Interactions Management",
-            caption: "Every report in one filterable table. Location, category, status, and a View Details action per row. The colour-coded status pills (Assigned / Under Review / Resolved) create a visual triage system that works at a glance.",
+            // caption: "Every report in one filterable table. Location, category, status, and a View Details action per row. The colour-coded status pills (Assigned / Under Review / Resolved) create a visual triage system that works at a glance.",
           },
           {
             src: "/images/projects/public-pulse/24.png",
             label: "13 — Sentiment Analysis",
-            caption: "The most strategically important screen. An overall sentiment score of 0.75, trend lines across 12 months, geographic breakdowns by county, and category filters. For the first time, an official can answer: \"What does Langata feel about water services right now?\" — and have data to back it up.",
+            // caption: "The most strategically important screen. An overall sentiment score of 0.75, trend lines across 12 months, geographic breakdowns by county, and category filters. For the first time, an official can answer: \"What does Langata feel about water services right now?\" — and have data to back it up.",
           },
         ].map((screen) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
@@ -747,9 +747,9 @@ export default function PublicPulsePage() {
               <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.3em", textTransform: "uppercase" as const, color: PP, paddingTop: "4px" }}>
                 {screen.label}
               </p>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.85, color: "rgba(228,230,195,0.5)", maxWidth: "580px" }}>
+              {/* <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.85, color: "rgba(228,230,195,0.5)", maxWidth: "580px" }}>
                 {screen.caption}
-              </p>
+              </p> */}
             </div>
           </Reveal>
         ))}
@@ -813,7 +813,7 @@ export default function PublicPulsePage() {
                         ))}
                     </div>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", lineHeight: 1.7, color: "rgba(228,230,195,0.4)", marginTop: "20px" }}>
-                        Roboto was chosen for its civic clarity and democratic legibility — readable at every weight, on every screen, for every citizen.
+                        Roboto was chosen for its civic clarity and democratic legibility, readable at every weight, on every screen, for every citizen.
                     </p>
                 </div>
             </Reveal>
@@ -865,12 +865,12 @@ export default function PublicPulsePage() {
             className="mb-8"
             style={{ fontFamily: "var(--font-body)", fontSize: "1.05rem", lineHeight: 1.9, color: "rgba(228,230,195,0.6)", maxWidth: "780px" }}
           >
-            Public Pulse required me to hold two fundamentally different mental models in tension at once. Citizens needed warmth, simplicity, and reassurance that they'd been heard. Administrators needed density, control, and data they could act on. The visual system — teal, dark surfaces, clean type — had to work for both without compromise.
+            Public Pulse required me to hold two fundamentally different mental models in tension at once. Citizens needed warmth, simplicity, and reassurance that they'd been heard. Administrators needed density, control, and data they could act on. 
           </p>
           <p
             style={{ fontFamily: "var(--font-body)", fontSize: "1.05rem", lineHeight: 1.9, color: "rgba(228,230,195,0.6)", maxWidth: "780px" }}
           >
-            The biggest lesson: designing for civic contexts means designing for trust. Every interaction — from the AI's first greeting to the admin's sentiment score — either builds or erodes it. In government tech, there is no neutral.
+            The biggest lesson: designing for civic contexts means designing for trust. Every interaction either builds or erodes it. In government tech, there is no neutral.
           </p>
         </Reveal>
 

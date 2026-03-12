@@ -278,7 +278,7 @@ export default function FlowspacePage() {
                 }}
               >
                 Flowspace is an integrated productivity environment where tasks,
-                reflections, and ideas live in one unified workspace — and where
+                reflections, and ideas live in one unified workspace and where
                 the app adapts to your mental state rather than demanding you
                 perform at a fixed capacity every day.
               </p>
@@ -311,8 +311,8 @@ export default function FlowspacePage() {
                   color: "var(--cream)",
                 }}
               >
-                "Most productivity tools ignore the user's mental state entirely.
-                Flowspace makes energy the primary input — not an afterthought."
+                Most productivity tools ignore the user's mental state entirely.
+                Flowspace makes energy the primary input, not an afterthought.
               </p>
             </div>
           </div>
@@ -343,17 +343,17 @@ export default function FlowspacePage() {
             {
               number: "01",
               title: "The mental state gap",
-              body: "Every productivity tool assumes you show up the same every day. They don't account for exhaustion, anxiety, or low focus — so on hard days, the tool becomes another source of pressure rather than support.",
+              body: "Every productivity tool assumes you show up the same every day. They don't account for exhaustion, anxiety, or low focus, so on hard days, the tool becomes another source of pressure rather than support.",
             },
             {
               number: "02",
               title: "Scattered thinking",
-              body: "Ideas live in notes apps. Tasks live in Todoist. Reflections live in a journal. Decisions get made in your head at 2am. The fragmentation creates cognitive overhead that defeats the purpose of being organised.",
+              body: "Ideas live in notes apps. Tasks live in To-do-lists. Reflections live in a journal. Decisions get made in your head at 2am. The fragmentation creates cognitive overhead that defeats the purpose of being organised.",
             },
             {
               number: "03",
               title: "Generic advice at critical moments",
-              body: "When users face real dilemmas — a career decision, a creative block, a conflict — productivity apps offer nothing. The tools that are supposed to support your thinking abandon you exactly when you need them most.",
+              body: "When users face real dilemmas, a career decision, a creative block, a conflict, productivity apps offer nothing. The tools that are supposed to support your thinking abandon you exactly when you need them most.",
             },
           ].map((p) => (
             <Reveal key={p.number} delay={0.05}>
@@ -430,22 +430,22 @@ export default function FlowspacePage() {
           {
             number: "02",
             title: "Define",
-            body: "The design challenge reframed itself: don't build a better task manager — build an environment that responds to the human using it. The primary input became energy level, not just due date. Everything else flowed from that decision.",
+            body: "The design challenge reframed itself: don't build a better task manager, build an environment that responds to the human using it. The primary input became energy level, not just due date. Everything else flowed from that decision.",
           },
           {
             number: "03",
             title: "Ideate",
-            body: "The Inner Council concept emerged from asking: what if the app could think about your situation the way a wise friend would? Not a chatbot with generic prompts, but five distinct perspectives — each with a different lens — drawing from your actual logged patterns, mood, and energy to give genuinely contextual responses.",
+            body: "The Inner Council concept emerged from asking: what if the app could think about your situation the way a wise friend would? Not a chatbot with generic prompts, but five distinct perspectives, each with a different lens, drawing from your actual logged patterns, mood, and energy to give genuinely contextual responses.",
           },
           {
             number: "04",
             title: "Prototype",
-            body: "The warm burgundy and amber palette was a deliberate departure from productivity app convention (blue, white, minimal). Flowspace needed to feel like a private space — warm, considered, slightly intimate. The colour system reinforced the emotional purpose of the product.",
+            body: "The warm burgundy and amber palette was a deliberate departure from productivity app convention (blue, white, minimal). Flowspace needed to feel like a private space, warm, considered, slightly intimate. The colour system reinforced the emotional purpose of the product.",
           },
           {
             number: "05",
             title: "Validate",
-            body: "Testing surfaced one critical insight: users trusted the energy-based task suggestions immediately, but needed to understand *why* a task was recommended. Adding the energy cost indicator per task — visible before you commit — resolved the hesitation and made the system feel transparent rather than prescriptive.",
+            body: "Testing surfaced one critical insight: users trusted the energy-based task suggestions immediately, but needed to understand *why* a task was recommended. Adding the energy cost indicator per task, visible before you commit, resolved the hesitation and made the system feel transparent rather than prescriptive.",
           },
         ].map((stage) => (
           <Reveal key={stage.number} delay={0.05}>
@@ -524,8 +524,8 @@ export default function FlowspacePage() {
                 maxWidth: "780px",
               }}
             >
-              "The Inner Council isn't a chatbot. It's five distinct
-              perspectives — each with a name, a voice, and a point of view —
+              The Inner Council isn't a chatbot. It's five distinct
+              perspectives, each with a name, a voice, and a point of view,
               that draw from your actual logged life to speak with context. That
               distinction changed everything about how users engaged with it."
             </p>
@@ -607,32 +607,32 @@ export default function FlowspacePage() {
           {
             src: "/images/projects/flowspace/1.png",
             label: "01 — Dashboard",
-            caption: "The day starts with two questions: how's your energy, and what's your mood? Flowspace uses those inputs to surface the right tasks from your active projects — not everything on your list, just what you can realistically tackle today. Active projects and a focused task list sit below, shaped by what you told the app you have capacity for.",
+            caption: "The day starts with two questions: how's your energy, and what's your mood? Flowspace uses those inputs to surface the right tasks from your active projects, not everything on your list, just what you can realistically tackle today. Active projects and a focused task list sit below, shaped by what you told the app you have capacity for.",
           },
           {
             src: "/images/projects/flowspace/2.png",
             label: "02 — Projects",
-            caption: "All your projects in one view, filterable by status — All, Active, Paused, Completed. Projects are categorised as Career, Personal, Creative, or Learning, giving you a picture of where your effort is actually going across life areas, not just work.",
+            caption: "All your projects in one view, filterable by status, All, Active, Paused, Completed. Projects are categorised as Career, Personal, Creative, or Learning, giving you a picture of where your effort is actually going across life areas, not just work.",
           },
           {
             src: "/images/projects/flowspace/3.png",
             label: "03 — Tasks",
-            caption: "Tasks show their energy cost before you commit. Overdue items surface clearly without shame — just clarity. The app also suggests tasks based on your logged energy for the day, so when you're running low, it steers you toward lighter work rather than letting you stall on something that needs your full capacity.",
+            caption: "Tasks show their energy cost before you commit. Overdue items surface clearly without shame, just clarity. The app also suggests tasks based on your logged energy for the day, so when you're running low, it steers you toward lighter work rather than letting you stall on something that needs your full capacity.",
           },
           {
             src: "/images/projects/flowspace/4.png",
             label: "04 — Inner Council",
-            caption: "Five inner voices. One clearer path. The Council isn't a generic AI assistant — each voice brings a distinct perspective to your dilemma, drawing from your energy, mood patterns, and recent logs. You come with a real question. You leave with a real answer. This was the feature users described as 'unlike anything else they'd used.'",
+            caption: "Five inner voices. One clearer path. The Council isn't a generic AI assistant, each voice brings a distinct perspective to your dilemma, drawing from your energy, mood patterns, and recent logs. You come with a real question. You leave with a real answer. This was the feature users described as 'unlike anything else they'd used.'",
           },
           {
             src: "/images/projects/flowspace/5.png",
             label: "05 — Mood & Focus",
-            caption: "A daily check-in for mood, focus level, and energy, paired with a free-form journal entry. The 7-day and 30-day graphs turn your logs into visible patterns — helping you notice when your energy dips weekly, or see the correlation between your focus and your sleep. Reflection becomes data without losing its humanity.",
+            caption: "A daily check-in for mood, focus level, and energy, paired with a free-form journal entry. The 7-day and 30-day graphs turn your logs into visible patterns, helping you notice when your energy dips weekly, or see the correlation between your focus and your sleep. Reflection becomes data without losing its humanity.",
           },
           {
             src: "/images/projects/flowspace/6.png",
             label: "06 — Brain Dump",
-            caption: "Capture anything — a project idea, a worry, a half-formed thought — without needing to organise it immediately. The Brain Dump is a pressure valve. When you're ready, you can convert any entry directly into a project or a task. Nothing is lost, nothing is forced into a system before it's ready.",
+            caption: "Capture anything, a project idea, a worry, a half-formed thought, without needing to organise it immediately. The Brain Dump is a pressure valve. When you're ready, you can convert any entry directly into a project or a task. Nothing is lost, nothing is forced into a system before it's ready.",
           },
         ].map((screen) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
@@ -739,7 +739,7 @@ export default function FlowspacePage() {
                 ))}
               </div>
               <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", lineHeight: 1.7, color: "rgba(228,230,195,0.4)" }}>
-                Nunito's rounded terminals soften the interface and reduce cognitive tension — a deliberate choice for an app dealing with mental state and reflection.
+                Nunito's rounded terminals soften the interface and reduce cognitive tension, a deliberate choice for an app dealing with mental state and reflection.
               </p>
             </div>
           </Reveal>
@@ -801,7 +801,7 @@ export default function FlowspacePage() {
             }}
           >
             Flowspace pushed me to think about design beyond the screen. The hardest
-            problems weren't visual — they were conceptual. How do you represent
+            problems weren't visual, they were conceptual. How do you represent
             energy without it feeling clinical? How do you make five AI voices feel
             distinct without making the interface feel cluttered? How do you design
             a Brain Dump that feels genuinely pressure-free?
@@ -817,7 +817,7 @@ export default function FlowspacePage() {
           >
             The offline-first architecture was also a design decision, not just a
             technical one. It sent a message: this app is yours, even when you have
-            no signal. Your data, your reflections, your Inner Council — all
+            no signal. Your data, your reflections, your Inner Council, all
             available regardless of connectivity. For an app about mental
             wellbeing and focus, that reliability felt essential.
           </p>
@@ -848,7 +848,7 @@ export default function FlowspacePage() {
               whiteSpace: "nowrap",
             }}
           >
-            BBC News
+            Visual Design
           </span>
         </div>
 
@@ -877,7 +877,7 @@ export default function FlowspacePage() {
                 color: "var(--cream)",
               }}
             >
-              BBC News
+              Visual Design
             </h2>
             <p
               style={{
@@ -888,7 +888,7 @@ export default function FlowspacePage() {
                 color: "rgba(228,230,195,0.4)",
               }}
             >
-              Graphic Design & Event Branding
+              Graphic Design & Branding
             </p>
           </Link>
 

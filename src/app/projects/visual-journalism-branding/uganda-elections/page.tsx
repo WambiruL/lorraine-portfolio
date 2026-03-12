@@ -196,7 +196,7 @@ export default function UgandaElectionsPage() {
           }}
         >
           Together, these elements create a unifying visual system that links
-          leadership and citizens — reinforcing the idea of the electoral process
+          leadership and citizens, reinforcing the idea of the electoral process
           as an ongoing, collective national experience rather than a single
           isolated event.
         </p>
@@ -207,7 +207,7 @@ export default function UgandaElectionsPage() {
         {[
           { symbol: "⟿", label: "National Ribbon", note: "Continuity & movement" },
           { symbol: "✓", label: "Tick Motif", note: "Civic participation" },
-          { symbol: "◎", label: "Democratic Cycle", note: "Ongoing collective experience" },
+          // { symbol: "◎", label: "Democratic Cycle", note: "Ongoing collective experience" },
         ].map((m) => (
           <div
             key={m.label}
@@ -306,8 +306,8 @@ export default function UgandaElectionsPage() {
           className="w-full mb-3"
           style={{ height: "80px", background: "#FFB42C", border: "1px solid rgba(255,255,255,0.06)" }}
         />
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--cream)", marginBottom: "2px" }}>#FFB42C</p>
-        <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--cream)", marginBottom: "2px" }}>Yellow</p>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--sage)", marginBottom: "2px" }}>#FFB42C</p>
+        <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--sage)", marginBottom: "2px" }}>Yellow</p>
         <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(242,242,242,0.35)" }}>Ugandan flag gold — civic energy</p>
       </div>
 
