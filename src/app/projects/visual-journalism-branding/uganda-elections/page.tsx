@@ -483,12 +483,12 @@ export default function UgandaElectionsPage() {
       {/* ══ BACK ══ */}
       <div className="max-w-6xl mx-auto px-6 lg:px-12 pb-20">
         <Link
-          href="/projects/visual-journalism-branding"
+          href="/projects/visual-journalism-branding/bbc-news-africa"
           style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.25em", textTransform: "uppercase" as const, color: "rgba(228,230,195,0.3)", transition: "color 0.3s" }}
           onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "var(--cream)")}
           onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(228,230,195,0.3)")}
         >
-          ← Back to Visual Work
+          ← Back to BBC News Africa
         </Link>
       </div>
 
