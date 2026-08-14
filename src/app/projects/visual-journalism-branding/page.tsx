@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import Link from "next/link";
+import { ImgSlot, SeriesCard } from "@/components/shared/SeriesLightbox";
 
 function Reveal({
   children,
@@ -32,21 +33,26 @@ function Reveal({
 
 type Filter = "ALL" | "GRAPHICS" | "BRANDING";
 
-const editorialPosts = [
-  { id: 1,  title: "Crimes Against Children", src: "/images/projects/vjb/1.png",  category: "GRAPHICS",  url: "https://www.instagram.com/p/DRADorZju6c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 2,  title: "How Ivory Coast Voted",                                     src: "/images/projects/vjb/2.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DQYoN5JAih7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 3,  title: "Hausa Day",                                                  src: "/images/projects/vjb/3.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DQYoN5JAih7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 4,  title: "Ramadan Kareem",                                             src: "/images/projects/vjb/4.png",  category: "GRAPHICS", url: "https://www.instagram.com/reel/DGn8V07sHS7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 5,  title: "Foreign Aid in Africa",      src: "/images/projects/vjb/5.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DGnunhQsnBL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 6,  title: "UK's Immigration Policy?",   src: "/images/projects/vjb/6.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DJuN_Ifhlxc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 7,  title: "Eid Mubarak",                                                src: "/images/projects/vjb/7.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DHz53dwsMOd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 8,  title: "The Crisis in Sudan",               src: "/images/projects/vjb/8.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DIeTVUuss5X/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 9,  title: "Sudan Civil War: Key Events",                                src: "/images/projects/vjb/9.png",  category: "GRAPHICS", url: "https://www.instagram.com/p/DHtCUesMp1c/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 10, title: "The Golden Boot Race",                       src: "/images/projects/vjb/10.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DMNiL87TFHF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 11, title: "African Women Jailed",         src: "/images/projects/vjb/11.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHdLIMoRC4M/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 12, title: "Health Workers in Ethiopia",    src: "/images/projects/vjb/12.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DJ9jcLhM2Ck/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 13, title: "A Tale of Two Rivals",                   src: "/images/projects/vjb/13.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DHvt75nRBkS/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
-  { id: 14, title: "New Media",    src: "/images/projects/vjb/14.png", category: "GRAPHICS", url: "https://www.instagram.com/p/DLcSd3APweU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" },
+const STORIES = "/images/projects/vjb/stories";
+
+type StoryPost =
+  | { type: "single"; slug: string; title: string; src: string }
+  | { type: "series"; slug: string; title: string; images: string[] };
+
+const storyPosts: StoryPost[] = [
+  { type: "series", slug: "ivory-coast-elections", title: "How Ivory Coast Voted", images: [1, 2, 3, 4, 5, 6].map((n) => `${STORIES}/ivory-coast-elections/${n}.png`) },
+  { type: "single", slug: "hausa-day", title: "Hausa Day", src: `${STORIES}/hausa-day.png` },
+  { type: "single", slug: "ramadan", title: "Ramadan", src: `${STORIES}/ramadan.png` },
+  { type: "single", slug: "eid-mubarak", title: "Eid Mubarak", src: `${STORIES}/eid-mubarak.png` },
+  { type: "series", slug: "uk-immigration", title: "UK's Immigration Policy", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/uk-immigration/${n}.png`) },
+  { type: "series", slug: "sudan-war-timeline", title: "Sudan War Timeline", images: Array.from({ length: 10 }, (_, i) => `${STORIES}/sudan-war-timeline/${i + 1}.png`) },
+  { type: "series", slug: "sudan-conflict-in-numbers", title: "Sudan Conflict in Numbers", images: [1, 2, 3, 4].map((n) => `${STORIES}/sudan-conflict-in-numbers/${n}.png`) },
+  { type: "series", slug: "south-sudan-crisis", title: "South Sudan Crisis", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/south-sudan-crisis/${n}.png`) },
+  { type: "series", slug: "ukaid", title: "UK Aid", images: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `${STORIES}/ukaid/${n}.png`) },
+  { type: "series", slug: "violence-against-children", title: "Violence Against Children", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/violence-against-children/${n}.png`) },
+  { type: "series", slug: "african-women", title: "African Women Being Punished for Being Poor", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/african-women-being-punished-for-being-poor/${n}.png`) },
+  { type: "series", slug: "health-workers-strike", title: "Health Workers Strike", images: [1, 2, 3].map((n) => `${STORIES}/health-workers-strike/${n}.png`) },
+  { type: "series", slug: "new-media-journalism", title: "New Media Journalism", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/new-media-journalism/${n}.png`) },
 ];
 
 const brandingProjects = [
@@ -67,6 +73,95 @@ const brandingProjects = [
     bg: "#0a1a0b",
   },
 ];
+
+function BrandingCard({
+  project,
+  index,
+}: {
+  project: (typeof brandingProjects)[0];
+  index: number;
+}) {
+  return (
+    <Reveal delay={index * 0.08}>
+      <Link
+        href={`/projects/visual-journalism-branding/${project.slug}`}
+        className="group block relative overflow-hidden"
+        style={{ aspectRatio: "4/3" }}
+      >
+        {/* Cover image — colour always retained */}
+        <div
+          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+          style={{ background: project.bg }}
+        >
+          <img
+            src={project.src}
+            alt={project.title}
+            loading="lazy"
+            className="w-full h-full object-cover transition-all duration-700"
+            style={{ opacity: 0.75 }}
+            onError={(e) => {
+              (e.target as HTMLImageElement).style.display = "none";
+            }}
+          />
+        </div>
+
+        {/* Frost layer — fades out on hover */}
+        <div
+          className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
+          style={{
+            backdropFilter: "blur(20px) brightness(0.55)",
+            WebkitBackdropFilter: "blur(20px) brightness(0.6)",
+            background: `${project.bg}99`,
+          }}
+        />
+
+        {/* Content — centred, fades out with frost */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
+          <div className="flex flex-col items-center transition-opacity duration-500 group-hover:opacity-0">
+            <h3
+              className="text-center mb-3"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
+                fontWeight: 300,
+                fontStyle: "italic",
+                color: "var(--sage)",
+                lineHeight: 1.1,
+              }}
+            >
+              {project.title}
+            </h3>
+            <p
+              className="text-center mb-5"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: "0.85rem",
+                color: "rgba(228,230,195,0.45)",
+              }}
+            >
+              {project.subtitle}
+            </p>
+            <div
+              className="mb-4"
+              style={{ width: "24px", height: "1px", background: project.accent }}
+            />
+            <p
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.59rem",
+                letterSpacing: "0.1em",
+                textTransform: "uppercase" as const,
+                color: project.accent,
+              }}
+            >
+              Click to View Identity
+            </p>
+          </div>
+        </div>
+      </Link>
+    </Reveal>
+  );
+}
 
 export default function VisualJournalismPage() {
   const [mounted, setMounted] = useState(false);
@@ -144,6 +239,42 @@ export default function VisualJournalismPage() {
             </span>
           </Reveal>
 
+          {/* Client toggle */}
+          <Reveal delay={0.06}>
+            <div className="flex items-center gap-3 mb-6">
+              <span
+                className="px-5 py-2.5"
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase" as const,
+                  color: "var(--ink)",
+                  background: "var(--moss)",
+                  border: "1px solid var(--moss)",
+                }}
+              >
+                BBC News Africa
+              </span>
+              <Link
+                href="/projects/visual-journalism-branding/gates-foundation"
+                className="px-5 py-2.5 transition-colors duration-300"
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: "0.6rem",
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase" as const,
+                  color: "rgba(228,230,195,0.5)",
+                  border: "1px solid rgba(137,152,120,0.25)",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(228,230,195,0.5)")}
+              >
+                Gates Foundation Africa
+              </Link>
+            </div>
+          </Reveal>
+
           <Reveal delay={0.1}>
             <h1
               style={{
@@ -173,9 +304,9 @@ export default function VisualJournalismPage() {
                 maxWidth: "580px",
               }}
             >
-              Editorial graphics and brand identity work, including a contract
-              with BBC News Africa, covering stories across the continent with
-              design that informs as much as it communicates.
+              Editorial graphics and brand identity work spanning a contract
+              with BBC News Africa and a social campaign for Gates Foundation
+              Africa, design that informs and communicates across the continent.
             </p>
           </Reveal>
         </div>
@@ -243,95 +374,14 @@ export default function VisualJournalismPage() {
                   </p>
                 )}
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 mb-20">
-                  {editorialPosts.map((post, i) => (
-                    <Reveal key={post.id} delay={i * 0.03}>
-                      
-                      <a  href={post.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group relative overflow-hidden block"
-                        style={{ aspectRatio: "1/1", isolation: "isolate", transform: "translateZ(0)" }}
-                      >
-                        {/* Image — desaturated at rest, colour on hover */}
-                        <div
-                          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                          style={{ background: "var(--forest)" }}
-                        >
-                          <img
-                            src={post.src}
-                            alt={post.title}
-                            loading="lazy"
-                            className="w-full h-full object-cover transition-all duration-700"
-                            style={{ filter: "grayscale(100%)" }}
-                            onMouseEnter={(e) => ((e.target as HTMLImageElement).style.filter = "grayscale(0%)")}
-                            onMouseLeave={(e) => ((e.target as HTMLImageElement).style.filter = "grayscale(100%)")}
-                            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-                          />
-                          {/* Placeholder number */}
-                          <div
-                            className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                            style={{
-                              fontFamily: "var(--font-mono)",
-                              fontSize: "0.55rem",
-                              color: "rgba(228,230,195,0.15)",
-                              letterSpacing: "0.3em",
-                            }}
-                          >
-                            {String(post.id).padStart(2, "0")}
-                          </div>
-                        </div>
-
-                        {/* Frost layer — fades out on hover */}
-                        <div
-                          className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
-                          style={{
-                            backdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
-                            WebkitBackdropFilter: "blur(12px) saturate(0.4) brightness(0.7)",
-                            background: "rgba(34,55,40,0.45)",
-                            willChange: "opacity",
-                            isolation: "isolate",
-                          }}
-                        />
-
-                        {/* Title — centred, editorial styled */}
-                        <div
-                          className="absolute inset-0 flex flex-col items-center justify-center p-6 pointer-events-none"
-                          style={{ background: "linear-gradient(to top, rgba(20,45,28,0.92) 0%, rgba(20,45,28,0.4) 100%)" }}
-                        >
-                          <p
-                            className="text-center transition-opacity duration-500 group-hover:opacity-0 mb-3"
-                            style={{
-                              fontFamily: "var(--font-display)",
-                              fontSize: "clamp(0.85rem, 1.5vw, 1.05rem)",
-                              fontWeight: 300,
-                              fontStyle: "italic",
-                              lineHeight: 1.4,
-                              color: "var(--sage)",
-                              opacity: 0.7,
-                              letterSpacing: "0.01em",
-                            }}
-                          >
-                            {post.title}
-                          </p>
-                          <div
-                            className="transition-opacity duration-500 group-hover:opacity-0 mb-3"
-                            style={{ width: "24px", height: "1px", background: "var(--moss)" }}
-                          />
-                          <p
-                            className="transition-opacity duration-500 group-hover:opacity-0"
-                            style={{
-                              fontFamily: "var(--font-mono)",
-                              fontSize: "0.53rem",
-                              letterSpacing: "0.25em",
-                              textTransform: "uppercase" as const,
-                              color: "var(--moss)",
-                            }}
-                          >
-                            View Post
-                          </p>
-                        </div>
-                      </a>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-20">
+                  {storyPosts.map((post, i) => (
+                    <Reveal key={post.slug} delay={i * 0.02}>
+                      {post.type === "single" ? (
+                        <ImgSlot src={post.src} label={post.title} aspect="1/1" />
+                      ) : (
+                        <SeriesCard images={post.images} label={post.title} aspect="1/1" />
+                      )}
                     </Reveal>
                   ))}
                 </div>
@@ -363,84 +413,7 @@ export default function VisualJournalismPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   {brandingProjects.map((project, i) => (
-                    <Reveal key={project.slug} delay={i * 0.08}>
-                      <Link
-                        href={`/projects/visual-journalism-branding/${project.slug}`}
-                        className="group block relative overflow-hidden"
-                        style={{ aspectRatio: "4/3" }}
-                      >
-                        {/* Cover image — colour always retained */}
-                        <div
-                          className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
-                          style={{ background: project.bg }}
-                        >
-                          <img
-                            src={project.src}
-                            alt={project.title}
-                            loading="lazy"
-                            className="w-full h-full object-cover transition-all duration-700"
-                            style={{ opacity: 0.75 }}
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).style.display = "none";
-                            }}
-                          />
-                        </div>
-
-                        {/* Frost layer — fades out on hover */}
-                        <div
-                          className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-0 pointer-events-none"
-                          style={{
-                            backdropFilter: "blur(20px) brightness(0.55)",
-                            WebkitBackdropFilter: "blur(20px) brightness(0.6)",
-                            background: `${project.bg}99`,
-                          }}
-                        />
-
-                        {/* Content — centred, fades out with frost */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center p-8">
-                          <div className="flex flex-col items-center transition-opacity duration-500 group-hover:opacity-0">
-                            <h3
-                              className="text-center mb-3"
-                              style={{
-                                fontFamily: "var(--font-display)",
-                                fontSize: "clamp(1.5rem, 2vw, 2.5rem)",
-                                fontWeight: 300,
-                                fontStyle: "italic",
-                                color: "var(--sage)",
-                                lineHeight: 1.1,
-                              }}
-                            >
-                              {project.title}
-                            </h3>
-                            <p
-                              className="text-center mb-5"
-                              style={{
-                                fontFamily: "var(--font-body)",
-                                fontSize: "0.85rem",
-                                color: "rgba(228,230,195,0.45)",
-                              }}
-                            >
-                              {project.subtitle}
-                            </p>
-                            <div
-                              className="mb-4"
-                              style={{ width: "24px", height: "1px", background: project.accent }}
-                            />
-                            <p
-                              style={{
-                                fontFamily: "var(--font-mono)",
-                                fontSize: "0.59rem",
-                                letterSpacing: "0.1em",
-                                textTransform: "uppercase" as const,
-                                color: project.accent,
-                              }}
-                            >
-                              Click to View Identity
-                            </p>
-                          </div>
-                        </div>
-                      </Link>
-                    </Reveal>
+                    <BrandingCard key={project.slug} project={project} index={i} />
                   ))}
                 </div>
               </motion.div>
