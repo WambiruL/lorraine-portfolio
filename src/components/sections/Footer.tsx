@@ -224,7 +224,7 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Right — CV download + copyright */}
+          {/* Right - CV download + copyright */}
           <div className="flex items-center gap-8">
 
             {/* Copyright */}
@@ -273,7 +273,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Large background name — decorative ── */}
+        {/* ── Large background name - decorative ── */}
         {/* <div
           className="mt-16 overflow-hidden select-none pointer-events-none"
           aria-hidden

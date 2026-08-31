@@ -26,7 +26,7 @@ function ImgSlot({ src, label, aspect = "16/9", className = "" }: { src: string;
       style={{ aspectRatio: aspect, background: "#1a1206", border: "1px solid rgba(200,150,62,0.1)" }}
     >
       <img src={src} alt={label} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
-      {/* Placeholder label — hidden once image loads */}
+      {/* Placeholder label - hidden once image loads */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none"
         style={{ fontFamily: "var(--font-mono)", fontSize: "0.55rem", letterSpacing: "0.3em", color: "rgba(200,150,62,0.2)", textTransform: "uppercase" }}>
         {label}
@@ -64,7 +64,7 @@ export default function UgandaElectionsPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.8rem, 6vw, 6rem)", fontWeight: 300, lineHeight: 1.05, color: "var(--cream)", maxWidth: "820px" }}>
-              Uganda Elections 2026 —{" "}
+              Uganda Elections 2026,{" "}
               <em style={{ color: `${ACCENT}cc` }}>a visual identity built for the ballot.</em>
             </h1>
           </Reveal>
@@ -110,7 +110,7 @@ export default function UgandaElectionsPage() {
     minHeight: "420px",
   }}
 >
-  {/* Frost patch — top right corner */}
+  {/* Frost patch - top right corner */}
   <div
     className="absolute top-0 right-0 w-2/3 h-full pointer-events-none"
     style={{
@@ -264,7 +264,7 @@ export default function UgandaElectionsPage() {
         </Reveal>
 
         {/* Colour palette */}
-        {/* Colour Palette — designed, no image needed */}
+        {/* Colour Palette - designed, no image needed */}
 <Reveal delay={0.05} className="mb-6">
   <div
     className="p-10"
@@ -308,7 +308,7 @@ export default function UgandaElectionsPage() {
         />
         <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.65rem", color: "var(--sage)", marginBottom: "2px" }}>#FFB42C</p>
         <p style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 400, color: "var(--sage)", marginBottom: "2px" }}>Yellow</p>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(242,242,242,0.35)" }}>Ugandan flag gold — civic energy</p>
+        <p style={{ fontFamily: "var(--font-body)", fontSize: "0.75rem", color: "rgba(242,242,242,0.35)" }}>Ugandan flag gold, civic energy</p>
       </div>
 
       {/* BBC brand note */}
@@ -324,7 +324,7 @@ export default function UgandaElectionsPage() {
   </div>
 </Reveal>
 
-        {/* Patterns + supporting elements — 2 col */}
+        {/* Patterns + supporting elements - 2 col */}
         <div className="grid md:grid-cols-2 gap-4 mb-6">
           <Reveal delay={0.05}>
             {/* PATH: /images/projects/vjb/uganda/patterns.jpg */}
@@ -352,7 +352,7 @@ export default function UgandaElectionsPage() {
         </Reveal>
         </div>
 
-        {/* Wordtype — full width */}
+        {/* Wordtype - full width */}
         <Reveal delay={0.05} className="mb-6">
           {/* PATH: /images/projects/vjb/wafcon/wordtype.jpg */}
           <ImgSlot src="/images/projects/vjb/uganda/wordtype.png" label="Wordtype" aspect="16/5" />
@@ -380,7 +380,7 @@ export default function UgandaElectionsPage() {
             ── Broadcast
           </p>
         </Reveal>
-        {/* Add as many broadcast images as you have — duplicate ImgSlot rows */}
+        {/* Add as many broadcast images as you have - duplicate ImgSlot rows */}
         <div className="grid md:grid-cols-2 gap-4 mb-4">
           <Reveal delay={0.03}>
             {/* PATH: /images/projects/vjb/uganda/broadcast-1.jpg */}
@@ -440,7 +440,7 @@ export default function UgandaElectionsPage() {
             ── Social Media
           </p>
         </Reveal>
-        {/* Social posts are square — grid of 4 */}
+        {/* Social posts are square - grid of 4 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
           {[1, 2, 3, 4].map((n, i) => (
             <Reveal key={n} delay={i * 0.04}>

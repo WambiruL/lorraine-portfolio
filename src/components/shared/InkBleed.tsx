@@ -39,23 +39,23 @@ export default function InkBleed() {
 
     let raf: number;
 
-    const BLOB_COUNT = 5;
+    const BLOB_COUNT = 3;
 
     function createBlob(forced?: Partial<Omit<Blob, "baseX" | "baseY">>): Blob {
       const x      = forced?.x      ?? Math.random() * width;
       const y      = forced?.y      ?? Math.random() * height;
-      const radius = forced?.radius ?? (Math.random() * 260 + 180) * Math.max(Math.min(width, height) / 900, 0.5);
+      const radius = forced?.radius ?? (Math.random() * 260 + 220) * Math.max(Math.min(width, height) / 900, 0.5);
       return {
         x,
         y,
         baseX:         x,
         baseY:         y,
-        vx:            (Math.random() - 0.5) * 0.18,
-        vy:            (Math.random() - 0.5) * 0.18,
+        vx:            (Math.random() - 0.5) * 0.09,
+        vy:            (Math.random() - 0.5) * 0.09,
         radius,
-        targetRadius:  (Math.random() * 300 + 160) * Math.max(Math.min(width, height) / 900, 0.5),
+        targetRadius:  (Math.random() * 300 + 200) * Math.max(Math.min(width, height) / 900, 0.5),
         opacity:       forced?.opacity ?? 0,
-        targetOpacity: Math.random() * 0.08 + 0.03,
+        targetOpacity: Math.random() * 0.035 + 0.015,
         phase:         Math.random() * Math.PI * 2,
         phaseSpeed:    Math.random() * 0.004 + 0.001,
         morphAngle:    Math.random() * Math.PI * 2,
@@ -72,7 +72,7 @@ export default function InkBleed() {
       createBlob({
         x:       (width  / BLOB_COUNT) * i + Math.random() * (width / BLOB_COUNT),
         y:       Math.random() * height,
-        opacity: Math.random() * 0.05,
+        opacity: Math.random() * 0.02,
       })
     );
 
@@ -144,7 +144,7 @@ export default function InkBleed() {
         // Fade
         blob.opacity += (blob.targetOpacity - blob.opacity) * 0.008;
         if (Math.abs(blob.opacity - blob.targetOpacity) < 0.002) {
-          blob.targetOpacity = Math.random() * 0.08 + 0.03;
+          blob.targetOpacity = Math.random() * 0.035 + 0.015;
         }
 
         // Soft boundary wrap

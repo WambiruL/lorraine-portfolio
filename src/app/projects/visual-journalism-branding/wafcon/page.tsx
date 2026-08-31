@@ -107,7 +107,7 @@ export default function WafconPage() {
       minHeight: "420px",
     }}
   >
-    {/* Ghost pattern — silhouette grid */}
+    {/* Ghost pattern - silhouette grid */}
     {/* <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden> */}
       {/* {[...Array(6)].map((_, i) => (
         <svg
@@ -129,7 +129,7 @@ export default function WafconPage() {
           <path d="M45,60 L50,85 L40,85 L35,65 Z" fill="#899878" />
         </svg> */}
       {/* ))} */}
-      {/* Morocco pattern hint — geometric circle */}
+      {/* Morocco pattern hint - geometric circle */}
       {/* <svg viewBox="0 0 200 200" style={{ position: "absolute", right: "-5%", bottom: "-10%", width: "300px", opacity: 0.05 }}>
         <circle cx="100" cy="100" r="80" stroke="#899878" strokeWidth="3" fill="none" />
         <polygon points="100,20 120,80 185,80 133,118 153,180 100,142 47,180 67,118 15,80 80,80" stroke="#899878" strokeWidth="2" fill="none" />

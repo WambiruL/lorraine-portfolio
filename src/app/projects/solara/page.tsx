@@ -78,7 +78,7 @@ const process = [
   {
     num: "03",
     title: "Ideate",
-    body: "Explored 20+ directions before converging on three pillars: Private Journaling, AI Chat Companion, and Mood Insights, a complete support loop, not isolated features.",
+    body: "Explored 20+ directions before converging on three pillars, Private Journaling, AI Chat Companion, and Mood Insights, working together as one continuous support loop.",
   },
   {
     num: "04",
@@ -337,9 +337,9 @@ export default function SolaraPage() {
               }}
             >
               Campus counselling is stretched beyond capacity. Most existing
-              mental health apps feel clinical and cold, designed for adults
-              with disposable income, not students in a difficult moment between
-              lectures.
+              mental health apps feel clinical and cold. They&apos;re built for
+              adults with the time and money for therapy, a poor fit for a
+              student in a difficult moment between lectures.
             </p>
           </Reveal>
 
@@ -381,7 +381,7 @@ export default function SolaraPage() {
                       marginBottom: "14px",
                     }}
                   >
-                    <span style={{ color: "#95D5B2", flexShrink: 0, marginTop: "3px" }}>—</span>
+                    <span style={{ color: "#95D5B2", flexShrink: 0, marginTop: "3px" }}>–</span>
                     {item}
                   </li>
                 ))}
@@ -511,9 +511,9 @@ export default function SolaraPage() {
             conversation starters like "I am feeling stressed about..." lower the
             activation energy for opening up. The Journal needed AI that assists
             without intruding, Solara only offers reflection after you've
-            finished writing. And Insights needed to show narrative, not just
-            data, "You feel calmer after morning walks" is more motivating than
-            any graph.
+            finished writing. And Insights needed to read like a story instead
+            of a dashboard, "You feel calmer after morning walks" motivates in
+            a way no graph can.
           </p>
         </Reveal>
       </section>
@@ -534,7 +534,7 @@ export default function SolaraPage() {
       color: "var(--cream)",
     }}
   >
-    End-to-end design —{" "}
+    End-to-end design,{" "}
     <em style={{ color: "rgba(149,213,178,0.8)" }}>from splash to insights.</em>
   </h2>
 
@@ -570,7 +570,7 @@ export default function SolaraPage() {
       />
     </a>
 
-    {/* App link — swap href and label when live */}
+    {/* App link - swap href and label when live */}
     <div className="relative group">
       <div
         className="flex items-center gap-3 px-7 py-3.5 cursor-not-allowed"
@@ -587,7 +587,7 @@ export default function SolaraPage() {
           className="w-1.5 h-1.5 rounded-full flex-shrink-0"
           style={{ background: "rgba(149,213,178,0.3)" }}
         />
-        Try the App — Coming Soon
+        Try the App, Coming Soon
       </div>
 
       {/* Tooltip on hover */}
@@ -602,7 +602,7 @@ export default function SolaraPage() {
           color: "rgba(228,230,195,0.4)",
         }}
       >
-        Currently in development — check back soon
+        Currently in development, check back soon
       </div>
     </div>
   </div>
@@ -611,37 +611,37 @@ export default function SolaraPage() {
         {[
             {
                 src: "/images/projects/solara/3.png",
-                label: "01 — Splash & Identity",
+                label: "01. Splash & Identity",
                 caption: "The launch screen establishes Solara's identity, calm, botanical, deeply green. The open-book logomark communicates reflection and growth before a word is read.",
             },
             {
                 src: "/images/projects/solara/15.png",
-                label: "02 — Onboarding",
+                label: "02. Onboarding",
                 caption: "Three screens, three value propositions. Students understand what Solara offers before committing to sign-up, reducing drop-off at the most critical moment.",
             },
             {
                 src: "/images/projects/solara/13.png",
-                label: "03 — Dashboard",
+                label: "03. Dashboard",
                 caption: "The mood check-in is the hero element. Personalised resource cards surface based on your recent journal entries. Everything responds to you.",
             },
             {
             src: "/images/projects/solara/12.png",
-            label: "04 — Journal",
+            label: "04. Journal",
             caption: "A private, judgement-free space to write freely. Daily prompts lower the barrier to starting. Every entry is completely private and encrypted, and when you're done, Solara offers to reflect on it with you.",
             },
             {
             src: "/images/projects/solara/4.png",
-            label: "05 — AI Chat",
+            label: "05. AI Chat",
             caption: "Conversation starters lower the barrier to opening up. The AI responds with empathy first, advice second. Chat history becomes a record of growth.",
             },
             {
                 src: "/images/projects/solara/11.png",
-                label: "06 — Insights",
+                label: "06. Insights",
                 caption: "Mood graphs sit alongside written AI observations. Data becomes narrative. Numbers become motivation.",
             },
             {
                 src: "/images/projects/solara/10.png",
-                label: "07 — Resources",
+                label: "07. Resources",
                 caption: "Books, articles, and videos are surfaced based on what you've been writing about. The therapist directory lets users message licensed professionals directly inside the app, removing the friction of finding help outside it.",
             },
             ].map((screen, i) => (
@@ -659,7 +659,7 @@ export default function SolaraPage() {
                 />
                 </div>
 
-                {/* Caption row — label left, text right */}
+                {/* Caption row - label left, text right */}
                 <div className="grid lg:grid-cols-[180px_1fr] gap-6 lg:gap-16">
                 <p
                     style={{

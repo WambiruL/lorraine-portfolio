@@ -51,20 +51,20 @@ const N = "/images/projects/north";
 
 const process = [
   { num: "01", title: "Discover", body: "Mapped my own scattered setup, six apps for notes, tasks, money, career, hobbies, and none of them talking to each other." },
-  { num: "02", title: "Define", body: "One system, organised as rooms rather than tabs. Each area of life gets its own rules, built from a shared kit." },
+  { num: "02", title: "Define", body: "One system, organised into rooms. Each area of life gets its own space and its own rules, built from a shared kit." },
   { num: "03", title: "Ideate", body: "Tested a folder-and-tag structure first. Dropped it. Retrieval by recency and pinning matched how people actually think back on a day." },
   { num: "04", title: "Prototype", body: "Built the full shell in Figma: sign-up, home, a daily check-in, and seven rooms, notes, lists, career, learning, finances, work, hobbies." },
   { num: "05", title: "Validate", body: "Walked the corridor in order to confirm the arrangement itself made the case: each room recognisable in under two seconds." },
 ];
 
 const flagship = [
-  { src: `${N}/home.png`, label: "01 — Home", caption: "One evening greeting, two things that moved forward today, three cards worth acting on. Nothing else competes for attention." },
-  { src: `${N}/sign-up.png`, label: "02 — Sign Up", caption: "Three fields, each one explained. A system holding finances and a private journal has to earn trust before it earns data." },
-  { src: `${N}/check-in.png`, label: "03 — Daily Check-In", caption: "The single habit the whole system is built around. Everything else is easier to keep up once this one sticks." },
-  { src: `${N}/room-notes.png`, label: "04 — Notes", caption: "Shaped like a journal page: a date, a note, an optional pin. No folders, no tags, nothing to file." },
-  { src: `${N}/room-career.png`, label: "05 — Career", caption: "A path diagram instead of a résumé, milestones behind, opportunities ahead, gaps drawn honestly as gaps." },
-  { src: `${N}/studio-home.png`, label: "06 — Studio", caption: "The one room with no status field. Moodboards, sketches and dead ends live together, on purpose." },
-  { src: `${N}/settings.png`, label: "07 — Settings", caption: "Plain-language controls for a system that touches money, career and private writing, nothing buried." },
+  { src: `${N}/home.png`, label: "01. Home", caption: "One evening greeting, two things that moved forward today, three cards worth acting on. Nothing else competes for attention." },
+  { src: `${N}/sign-up.png`, label: "02. Sign Up", caption: "Three fields, each one explained. A system holding finances and a private journal has to earn trust before it earns data." },
+  { src: `${N}/check-in.png`, label: "03. Daily Check-In", caption: "The single habit the whole system is built around. Everything else is easier to keep up once this one sticks." },
+  { src: `${N}/room-notes.png`, label: "04. Notes", caption: "Shaped like a journal page: a date, a note, an optional pin. No folders, no tags, nothing to file." },
+  { src: `${N}/room-career.png`, label: "05. Career", caption: "A path diagram instead of a résumé, milestones behind, opportunities ahead, gaps drawn honestly as gaps." },
+  { src: `${N}/studio-home.png`, label: "06. Studio", caption: "The one room with no status field. Moodboards, sketches and dead ends live together, on purpose." },
+  { src: `${N}/settings.png`, label: "07. Settings", caption: "Plain-language controls for a system that touches money, career and private writing, nothing buried." },
 ];
 
 export default function NorthPage() {
@@ -177,7 +177,7 @@ export default function NorthPage() {
                   "Progress that disappears the moment a tab is closed",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-4" style={{ fontFamily: "var(--font-body)", fontSize: "1rem", lineHeight: 1.7, color: "rgba(228,230,195,0.6)", marginBottom: "14px" }}>
-                    <span style={{ color: ACCENT, flexShrink: 0, marginTop: "3px" }}>—</span>
+                    <span style={{ color: ACCENT, flexShrink: 0, marginTop: "3px" }}>–</span>
                     {item}
                   </li>
                 ))}
@@ -194,8 +194,8 @@ export default function NorthPage() {
         <Reveal>
           <SectionLabel>Process</SectionLabel>
           <h2 className="mb-20" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 300, lineHeight: 1.2, color: "var(--cream)" }}>
-            Five stages. One through-line:{" "}
-            <em style={{ color: ACCENT_LIGHT }}>rooms, not tabs.</em>
+            Five stages, one decision that shaped everything:{" "}
+            <em style={{ color: ACCENT_LIGHT }}>rooms.</em>
           </h2>
         </Reveal>
 
@@ -241,7 +241,7 @@ export default function NorthPage() {
         <Reveal>
           <SectionLabel>Selected Screens</SectionLabel>
           <h2 className="mb-20" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.8rem)", fontWeight: 300, lineHeight: 1.2, color: "var(--cream)" }}>
-            End-to-end design —{" "}
+            End-to-end design,{" "}
             <em style={{ color: ACCENT_LIGHT }}>from sign-up to the studio.</em>
           </h2>
         </Reveal>

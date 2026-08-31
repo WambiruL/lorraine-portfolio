@@ -48,7 +48,7 @@ function ProjectCard({
     >
       <Link href={`/projects/${project.slug}`} className="block w-full h-full" prefetch={true}>
 
-        {/* ── Layer 1: Actual image — revealed on hover ── */}
+        {/* ── Layer 1: Actual image - revealed on hover ── */}
         <div className="absolute inset-0">
           <Image
           // loading="lazy"
@@ -71,7 +71,7 @@ function ProjectCard({
           />
         </div>
 
-        {/* ── Layer 2: Frost panel — fades out on hover ── */}
+        {/* ── Layer 2: Frost panel - fades out on hover ── */}
         <div
           className="absolute inset-0 transition-opacity duration-700"
           style={{
@@ -115,7 +115,7 @@ function ProjectCard({
             }}
           />
 
-          {/* Frosted state content — center */}
+          {/* Frosted state content - center */}
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6">
             <span
               className="text-cream/20 text-[0.8em] tracking-[0.3em] uppercase"
@@ -154,7 +154,7 @@ function ProjectCard({
           </div>
         </div>
 
-        {/* ── Layer 3: Bottom content — always present ── */}
+        {/* ── Layer 3: Bottom content - always present ── */}
         <div
           className="absolute bottom-0 left-0 right-0 px-6 lg:px-7 py-6 flex items-end justify-between"
           style={{
@@ -214,7 +214,7 @@ function ProjectCard({
           </div>
         </div>
 
-        {/* Index number — top left, always visible on frost */}
+        {/* Index number - top left, always visible on frost */}
         <div className="absolute top-5 left-6">
           <span
             style={{

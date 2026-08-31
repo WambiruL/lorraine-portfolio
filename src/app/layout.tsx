@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Lorraine Wambiru — Product & Visual Designer",
+    title: "Lorraine Wambiru, Product & Visual Designer",
     description: "Design that thinks. Work that stays with you.",
     type: "website",
   },

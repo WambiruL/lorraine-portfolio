@@ -148,7 +148,7 @@ export default function AfricaMonthPage() {
             className="grid grid-cols-3 md:grid-cols-6 gap-3"
             style={{ gridAutoRows: "clamp(90px, 11vw, 130px)" }}
           >
-            {/* Pattern — large anchor tile */}
+            {/* Pattern - large anchor tile */}
             <div
               className="relative overflow-hidden col-span-3 row-span-2"
               style={{ border: `1px solid ${ACCENT}1a` }}
@@ -159,7 +159,7 @@ export default function AfricaMonthPage() {
               </div>
             </div>
 
-            {/* Colour chips — real hex values */}
+            {/* Colour chips - real hex values */}
             {[
               { hex: "#12236D", name: "Ink Navy", text: "#f3ecdd" },
               { hex: "#EBCB00", name: "Marigold", text: "#12236D" },
@@ -175,7 +175,7 @@ export default function AfricaMonthPage() {
               </div>
             ))}
 
-            {/* Gold splatter — supporting graphic */}
+            {/* Gold splatter - supporting graphic */}
             <div
               className="relative overflow-hidden flex items-center justify-center p-6 col-span-2"
               style={{ background: "#F5F3ED", border: `1px solid ${ACCENT}1a` }}

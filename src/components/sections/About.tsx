@@ -181,7 +181,7 @@ export default function About() {
                   background: "linear-gradient(to top, rgba(18,17,19,0.4), transparent)",
                 }}
               />
-              {/* Corner bracket — top left */}
+              {/* Corner bracket - top left */}
               <div
                 className="absolute top-3 left-3 w-5 h-5"
                 style={{
@@ -189,7 +189,7 @@ export default function About() {
                   borderLeft: "1px solid rgba(137,152,120,0.4)",
                 }}
               />
-              {/* Corner bracket — bottom right */}
+              {/* Corner bracket - bottom right */}
               <div
                 className="absolute bottom-3 right-3 w-5 h-5"
                 style={{
@@ -222,7 +222,7 @@ export default function About() {
               </span>
             </div>
 
-            {/* Outside of work — on desktop sits under photo */}
+            {/* Outside of work - on desktop sits under photo */}
             <div className="hidden lg:block mt-4">
               <p
                 className="text-moss/50 text-[0.6em] tracking-[0.3em] uppercase mb-4"
@@ -312,8 +312,8 @@ export default function About() {
                 <span className="text-cream/70">
                   product design and visual design roles
                 </span>{" "}
-                full-time or freelance, at organisations where design is
-                treated as a strategic function, not a finishing touch.
+                full-time or freelance, at organisations that treat design as
+                core to how decisions get made.
               </p>
             </motion.div>
 
@@ -369,7 +369,7 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Outside of work — mobile only */}
+            {/* Outside of work - mobile only */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

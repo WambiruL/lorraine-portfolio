@@ -151,7 +151,7 @@ export default function DesignProcess() {
           style={{ opacity: headerOpacity, y: headerY }}
           className="grid lg:grid-cols-2 gap-10 lg:gap-20 mb-16 lg:mb-20"
         >
-          {/* Left — heading */}
+          {/* Left - heading */}
           <div>
             <div className="flex items-center gap-4 mb-8">
               <span
@@ -182,7 +182,7 @@ export default function DesignProcess() {
             </h2>
           </div>
 
-          {/* Right — quote */}
+          {/* Right - quote */}
           <div className="flex items-end lg:items-center">
             <div className="relative pl-6">
               <div
@@ -288,7 +288,7 @@ export default function DesignProcess() {
                       lineHeight: 1.7,
                     }}
                   >
-                    A deep dive into the research, creative decisions, and craft
+                    A closer look at the research, creative decisions, and craft
                     behind one of the most significant projects of my career,
                     event branding at one of the world&apos;s most recognised
                     media organisations.

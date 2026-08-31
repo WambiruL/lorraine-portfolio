@@ -53,7 +53,7 @@ export default function Navbar() {
           {/* ── Logo ── */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex flex-col leading-none text-left"
+            className="flex flex-col leading-none text-left rounded-sm focus-visible:outline focus-visible:outline-1 focus-visible:outline-moss focus-visible:outline-offset-4"
           >
             <span
               className="text-cream text-lg tracking-[0.2em] uppercase"
@@ -81,7 +81,7 @@ export default function Navbar() {
                 <button
                   onClick={() => handleNavClick(link.href)}
                   data-hover
-                  className="relative group text-[12px] tracking-[0.18em] uppercase transition-colors duration-300"
+                  className="relative group text-[12px] tracking-[0.18em] uppercase transition-colors duration-300 rounded-sm focus-visible:outline focus-visible:outline-1 focus-visible:outline-moss focus-visible:outline-offset-4"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: activeLink === link.href ? "#899878" : "rgba(228,230,195,0.55)",
@@ -103,7 +103,7 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen(v => !v)}
             aria-label="Toggle menu"
-            className="md:hidden flex flex-col justify-center items-end gap-[5px] w-8 h-8 relative z-[60]"
+            className="md:hidden flex flex-col justify-center items-end gap-[5px] w-8 h-8 relative z-[60] rounded-sm focus-visible:outline focus-visible:outline-1 focus-visible:outline-moss focus-visible:outline-offset-4"
           >
             <motion.span
               animate={menuOpen

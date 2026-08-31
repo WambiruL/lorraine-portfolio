@@ -407,7 +407,7 @@ export default function PublicPulsePage() {
           {
             number: "01",
             title: "Discover",
-            body: "I mapped the existing landscape of civic reporting, what existed, what failed, and why. I interviewed citizens who had tried to report issues and government staff who received them. The gap between both experiences was stark. Citizens felt unheard; officials felt buried in noise.",
+            body: "I mapped how civic reporting actually worked, what existed, what failed, and why. I interviewed citizens who had tried to report issues and government staff who received them. The gap between both experiences was stark. Citizens felt unheard; officials felt buried in noise.",
           },
           {
             number: "02",
@@ -569,7 +569,7 @@ export default function PublicPulsePage() {
                 }}
               >
                 <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: `${PP}50` }} />
-                Live Platform — Coming Soon
+                Live Platform, Coming Soon
               </div>
               <div
                 className="absolute bottom-full left-0 mb-3 px-4 py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap"
@@ -582,7 +582,7 @@ export default function PublicPulsePage() {
                   color: "rgba(228,230,195,0.4)",
                 }}
               >
-                Currently in development — check back soon
+                Currently in development, check back soon
               </div>
             </div>
           </div>
@@ -590,7 +590,7 @@ export default function PublicPulsePage() {
 
         {/* Screen groups */}
 
-        {/* GROUP LABEL — Branding & Landing */}
+        {/* GROUP LABEL - Branding & Landing */}
         <Reveal>
           <p
             className="mb-10"
@@ -609,12 +609,12 @@ export default function PublicPulsePage() {
         {[
           {
             src: "/images/projects/public-pulse/1.png",
-            label: "01 — Brand Identity",
+            label: "01. Brand Identity",
             // caption: "The double-P logomark is built from mirrored columns, a visual metaphor for dialogue between citizen and state. The dark navy backdrop positions Public Pulse as serious civic infrastructure.",
           },
           {
             src: "/images/projects/public-pulse/8.png",
-            label: "02 — Home Page",
+            label: "02. Home Page",
             // caption: "\"Citizen feedback, finally taken seriously.\" The headline does the political work. The curved image container softens the civic tone without undermining it. One CTA: Join the Conversation.",
           },
         ].map((screen, i) => (
@@ -633,7 +633,7 @@ export default function PublicPulsePage() {
           </Reveal>
         ))}
 
-        {/* GROUP LABEL — Citizen Side */}
+        {/* GROUP LABEL - Citizen Side */}
         <Reveal>
           <p
             className="mb-10 mt-8"
@@ -652,38 +652,38 @@ export default function PublicPulsePage() {
         {[
           {
             src: "/images/projects/public-pulse/10.png",
-            label: "03 — AI Assistant",
+            label: "03. AI Assistant",
             caption: "The entry point for citizens: not a form, a conversation. Two paths, Report an Issue or Ask a Question, keep the experience focused.",
           },
           {
             src: "/images/projects/public-pulse/13.png",
-            label: "04 — Step 1 of 4: Issue Details",
+            label: "04. Step 1 of 4: Issue Details",
             // caption: "The reporting flow opens with the hardest part: describing what happened. The progress indicator (Step 1 of 4) tells the citizen exactly how much they're committing to. The chat bubble format makes a government form feel like a human conversation.",
           },
           {
             src: "/images/projects/public-pulse/14.png",
-            label: "05 — Step 2 of 4: Location",
-            // caption: "The AI responds to the citizen's message with empathy — \"That's dangerous. Thanks for pointing it out.\" — before asking for location. This sequence was a deliberate UX decision: acknowledge first, gather data second. It mirrors how a helpful human would actually behave.",
+            label: "05. Step 2 of 4: Location",
+            // caption: "The AI responds to the citizen's message with empathy - \"That's dangerous. Thanks for pointing it out.\" - before asking for location. This sequence was a deliberate UX decision: acknowledge first, gather data second. It mirrors how a helpful human would actually behave.",
           },
           {
             src: "/images/projects/public-pulse/15.png",
-            label: "06 — Step 3 of 4: Evidence",
+            label: "06. Step 3 of 4: Evidence",
             caption: "Optional photo upload, the system moves on whether or not evidence exists. \"No, I don't have any\" is a valid answer. Removing this blocker was critical: many citizens abandoned earlier prototypes when evidence upload felt mandatory.",
           },
           {
             src: "/images/projects/public-pulse/16.png",
-            label: "07 — Step 4 of 4: Escalation",
-            // caption: "\"Your report has been escalated. Thank you for your service.\" The word 'service' is intentional — it reframes civic reporting as an act of community contribution, not a complaint. The conversation is now a record. The citizen has been heard.",
+            label: "07. Step 4 of 4: Escalation",
+            // caption: "\"Your report has been escalated. Thank you for your service.\" The word 'service' is intentional - it reframes civic reporting as an act of community contribution, not a complaint. The conversation is now a record. The citizen has been heard.",
           },
           {
             src: "/images/projects/public-pulse/19.png",
-            label: "08 — Help Center",
+            label: "08. Help Center",
             caption: "A self-serve knowledge base. Citizens can find answers to platform questions without opening a new report.",
           },
           {
             src: "/images/projects/public-pulse/20.png",
-            label: "09 — Notification Settings",
-            // caption: "Fine-grained control over what citizens hear back about — from report escalation to area-wide alerts when a common issue in their neighbourhood is resolved. Transparency built into the settings layer, not bolted on after the fact.",
+            label: "09. Notification Settings",
+            // caption: "Fine-grained control over what citizens hear back about - from report escalation to area-wide alerts when a common issue in their neighbourhood is resolved. Transparency built into the settings layer, not bolted on after the fact.",
           },
         ].map((screen) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
@@ -701,7 +701,7 @@ export default function PublicPulsePage() {
           </Reveal>
         ))}
 
-        {/* GROUP LABEL — Admin Side */}
+        {/* GROUP LABEL - Admin Side */}
         <Reveal>
           <p
             className="mb-10 mt-8"
@@ -720,23 +720,23 @@ export default function PublicPulsePage() {
         {[
           {
             src: "/images/projects/public-pulse/21.png",
-            label: "10 — Admin Dashboard",
-            // caption: "2,340 reports. 800 assigned, 540 under review, 1,000 resolved. The headline metrics make the scale of civic engagement immediately legible. Sentiment donut charts and category breakdowns give officials the pattern — not just the noise.",
+            label: "10. Admin Dashboard",
+            // caption: "2,340 reports. 800 assigned, 540 under review, 1,000 resolved. The headline metrics make the scale of civic engagement immediately legible. Sentiment donut charts and category breakdowns give officials the pattern - not just the noise.",
           },
           {
             src: "/images/projects/public-pulse/22.png",
-            label: "11 — User Management",
-            // caption: "Full citizen account management with role-based filtering (Citizen, Admin), activity tracking, and report counts per user. The table-plus-filter layout mirrors familiar admin conventions — lowering the learning curve for government staff.",
+            label: "11. User Management",
+            // caption: "Full citizen account management with role-based filtering (Citizen, Admin), activity tracking, and report counts per user. The table-plus-filter layout mirrors familiar admin conventions - lowering the learning curve for government staff.",
           },
           {
             src: "/images/projects/public-pulse/23.png",
-            label: "12 — Interactions Management",
+            label: "12. Interactions Management",
             // caption: "Every report in one filterable table. Location, category, status, and a View Details action per row. The colour-coded status pills (Assigned / Under Review / Resolved) create a visual triage system that works at a glance.",
           },
           {
             src: "/images/projects/public-pulse/24.png",
-            label: "13 — Sentiment Analysis",
-            // caption: "The most strategically important screen. An overall sentiment score of 0.75, trend lines across 12 months, geographic breakdowns by county, and category filters. For the first time, an official can answer: \"What does Langata feel about water services right now?\" — and have data to back it up.",
+            label: "13. Sentiment Analysis",
+            // caption: "The most strategically important screen. An overall sentiment score of 0.75, trend lines across 12 months, geographic breakdowns by county, and category filters. For the first time, an official can answer: \"What does Langata feel about water services right now?\" - and have data to back it up.",
           },
         ].map((screen) => (
           <Reveal key={screen.label} delay={0.05} className="mb-28">
