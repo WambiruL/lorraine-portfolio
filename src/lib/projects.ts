@@ -32,13 +32,13 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "flowspace",
-    title: "Flowspace",
+    slug: "north",
+    title: "North",
     category: "UX/UI",
     year: "2026",
-    description: "A published productivity tool designed around deep focus and intentional work.",
-    coverImage: "/images/projects/flowspace-cover.png",
-    tags: ["Product Design", "Productivity"],
+    description: "A personal operating system unifying notes, career, finances and creative work in one calm place.",
+    coverImage: "/images/projects/north-cover.png",
+    tags: ["Product Design", "Systems Thinking", "Personal Software"],
     featured: true,
   },
 ];

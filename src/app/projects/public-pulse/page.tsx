@@ -900,7 +900,7 @@ export default function PublicPulsePage() {
               whiteSpace: "nowrap",
             }}
           >
-            Flowspace
+            North
           </span>
         </div>
 
@@ -918,7 +918,7 @@ export default function PublicPulsePage() {
             Next Project
           </p>
 
-          <Link href="/projects/flowspace" className="group block">
+          <Link href="/projects/north" className="group block">
             <h2
               className="mb-4 transition-colors duration-300 group-hover:text-moss"
               style={{
@@ -929,7 +929,7 @@ export default function PublicPulsePage() {
                 color: "var(--cream)",
               }}
             >
-              Flowspace
+              North
             </h2>
             <p
               style={{
@@ -940,12 +940,12 @@ export default function PublicPulsePage() {
                 color: "rgba(228,230,195,0.4)",
               }}
             >
-              All-in-one productivity tool
+              A personal operating system
             </p>
           </Link>
 
           <Link
-            href="/projects/flowspace"
+            href="/projects/north"
             className="group inline-flex items-center gap-3 mt-14"
             style={{ color: "rgba(228,230,195,0.3)" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}

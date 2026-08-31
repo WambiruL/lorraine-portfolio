@@ -145,13 +145,13 @@ export default function AfricaMonthPage() {
         </Reveal>
         <Reveal delay={0.02}>
           <div
-            className="grid gap-3"
-            style={{ gridTemplateColumns: "repeat(6, 1fr)", gridAutoRows: "clamp(90px, 11vw, 130px)" }}
+            className="grid grid-cols-3 md:grid-cols-6 gap-3"
+            style={{ gridAutoRows: "clamp(90px, 11vw, 130px)" }}
           >
             {/* Pattern — large anchor tile */}
             <div
-              className="relative overflow-hidden"
-              style={{ gridColumn: "span 3", gridRow: "span 2", border: `1px solid ${ACCENT}1a` }}
+              className="relative overflow-hidden col-span-3 row-span-2"
+              style={{ border: `1px solid ${ACCENT}1a` }}
             >
               <img src={`${BASE}/identity/pattern.png`} alt="Supporting pattern" className="w-full h-full object-cover" />
               <div className="absolute inset-0 flex items-end p-4 pointer-events-none" style={{ background: "linear-gradient(to top, rgba(10,26,15,0.75) 0%, transparent 45%)" }}>
@@ -167,8 +167,8 @@ export default function AfricaMonthPage() {
             ].map((c) => (
               <div
                 key={c.hex}
-                className="relative flex flex-col justify-end p-3"
-                style={{ gridColumn: "span 1", background: c.hex, border: c.hex === "#F5F3ED" ? `1px solid ${ACCENT}30` : "none" }}
+                className="relative flex flex-col justify-end p-3 col-span-1"
+                style={{ background: c.hex, border: c.hex === "#F5F3ED" ? `1px solid ${ACCENT}30` : "none" }}
               >
                 <p style={{ fontFamily: "var(--font-display)", fontSize: "0.85rem", fontStyle: "italic", color: c.text, marginBottom: 2 }}>{c.name}</p>
                 <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.1em", color: c.text, opacity: 0.75 }}>{c.hex.slice(1).toLowerCase()}</p>
@@ -177,16 +177,16 @@ export default function AfricaMonthPage() {
 
             {/* Gold splatter — supporting graphic */}
             <div
-              className="relative overflow-hidden flex items-center justify-center p-6"
-              style={{ gridColumn: "span 2", background: "#F5F3ED", border: `1px solid ${ACCENT}1a` }}
+              className="relative overflow-hidden flex items-center justify-center p-6 col-span-2"
+              style={{ background: "#F5F3ED", border: `1px solid ${ACCENT}1a` }}
             >
               <img src={`${BASE}/identity/gold-splatter.png`} alt="Gold splatter graphic" className="max-w-[75%] max-h-[75%] object-contain" />
             </div>
 
             {/* Type sample */}
             <div
-              className="relative overflow-hidden flex items-center justify-center"
-              style={{ gridColumn: "span 1", background: "#12236D", border: `1px solid ${ACCENT}1a` }}
+              className="relative overflow-hidden flex items-center justify-center col-span-1"
+              style={{ background: "#12236D", border: `1px solid ${ACCENT}1a` }}
             >
               <span style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3vw, 2.6rem)", fontWeight: 700, color: "#f3ecdd" }}>Aa</span>
             </div>
