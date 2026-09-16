@@ -30,9 +30,6 @@ const spaceMono = Space_Mono({
 export const metadata: Metadata = {
   title: "Lorraine Wambiru",
   description: "Design that thinks. Work that stays with you.",
-  icons: {
-    icon: "/favicon.svg",
-  },
   openGraph: {
     title: "Lorraine Wambiru, Product & Visual Designer",
     description: "Design that thinks. Work that stays with you.",
