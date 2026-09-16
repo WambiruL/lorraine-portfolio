@@ -1,43 +1,31 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { ImgSlot, SeriesCard } from "@/components/shared/SeriesLightbox";
-
-function Reveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 28 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }} className={className}>
-      {children}
-    </motion.div>
-  );
-}
+import Reveal from "@/components/shared/Reveal";
 
 const ACCENT = "#C15B44";
 const ACCENT_LIGHT = "rgba(193,91,68,0.85)";
 const STORIES = "/images/projects/vjb/stories";
 
 type StoryPost =
-  | { type: "single"; slug: string; title: string; src: string }
-  | { type: "series"; slug: string; title: string; images: string[] };
+  | { type: "single"; slug: string; title: string; src: string; postUrl?: string }
+  | { type: "series"; slug: string; title: string; images: string[]; postUrl?: string };
 
 const storyPosts: StoryPost[] = [
-  { type: "series", slug: "ivory-coast-elections", title: "How Ivory Coast Voted", images: [1, 2, 3, 4, 5, 6].map((n) => `${STORIES}/ivory-coast-elections/${n}.png`) },
-  { type: "single", slug: "hausa-day", title: "Hausa Day", src: `${STORIES}/hausa-day.png` },
-  { type: "single", slug: "ramadan", title: "Ramadan", src: `${STORIES}/ramadan.png` },
-  { type: "single", slug: "eid-mubarak", title: "Eid Mubarak", src: `${STORIES}/eid-mubarak.png` },
-  { type: "series", slug: "uk-immigration", title: "UK's Immigration Policy", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/uk-immigration/${n}.png`) },
-  { type: "series", slug: "sudan-war-timeline", title: "Sudan War Timeline", images: Array.from({ length: 10 }, (_, i) => `${STORIES}/sudan-war-timeline/${i + 1}.png`) },
-  { type: "series", slug: "sudan-conflict-in-numbers", title: "Sudan Conflict in Numbers", images: [1, 2, 3, 4].map((n) => `${STORIES}/sudan-conflict-in-numbers/${n}.png`) },
-  { type: "series", slug: "south-sudan-crisis", title: "South Sudan Crisis", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/south-sudan-crisis/${n}.png`) },
-  { type: "series", slug: "ukaid", title: "UK Aid", images: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `${STORIES}/ukaid/${n}.png`) },
-  { type: "series", slug: "violence-against-children", title: "Violence Against Children", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/violence-against-children/${n}.png`) },
-  { type: "series", slug: "african-women", title: "African Women Being Punished for Being Poor", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/african-women-being-punished-for-being-poor/${n}.png`) },
-  { type: "series", slug: "health-workers-strike", title: "Health Workers Strike", images: [1, 2, 3].map((n) => `${STORIES}/health-workers-strike/${n}.png`) },
-  { type: "series", slug: "new-media-journalism", title: "New Media Journalism", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/new-media-journalism/${n}.png`) },
+  { type: "series", slug: "ivory-coast-elections", title: "How Ivory Coast Voted", images: [1, 2, 3, 4, 5, 6].map((n) => `${STORIES}/ivory-coast-elections/${n}.png`), postUrl: "https://www.instagram.com/p/DQYoN5JAih7/" },
+  { type: "single", slug: "hausa-day", title: "Hausa Day", src: `${STORIES}/hausa-day.png`, postUrl: "https://www.instagram.com/p/DNzic3QQn4B/" },
+  { type: "single", slug: "ramadan", title: "Ramadan", src: `${STORIES}/ramadan.png`, postUrl: "https://www.instagram.com/reel/DGn8V07sHS7/" },
+  { type: "single", slug: "eid-mubarak", title: "Eid Mubarak", src: `${STORIES}/eid-mubarak.png`, postUrl: "https://www.instagram.com/reel/DHz5uVKivel/" },
+  { type: "series", slug: "uk-immigration", title: "UK's Immigration Policy", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/uk-immigration/${n}.png`), postUrl: "https://www.instagram.com/p/DJuN_Ifhlxc/" },
+  { type: "series", slug: "sudan-war-timeline", title: "Sudan War Timeline", images: Array.from({ length: 10 }, (_, i) => `${STORIES}/sudan-war-timeline/${i + 1}.png`), postUrl: "https://www.instagram.com/p/DHtCUesMp1c/" },
+  { type: "series", slug: "sudan-conflict-in-numbers", title: "Sudan Conflict in Numbers", images: [1, 2, 3, 4].map((n) => `${STORIES}/sudan-conflict-in-numbers/${n}.png`), postUrl: "https://www.instagram.com/p/DIeTVUuss5X/" },
+  { type: "series", slug: "south-sudan-crisis", title: "South Sudan Crisis", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/south-sudan-crisis/${n}.png`), postUrl: "https://www.instagram.com/p/DHvt75nRBkS/" },
+  { type: "series", slug: "ukaid", title: "UK Aid", images: [1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => `${STORIES}/ukaid/${n}.png`), postUrl: "https://www.instagram.com/p/DGnunhQsnBL/" },
+  { type: "series", slug: "violence-against-children", title: "Violence Against Children", images: [1, 2, 3, 4, 5, 6, 7].map((n) => `${STORIES}/violence-against-children/${n}.png`), postUrl: "https://www.instagram.com/p/DRADorZju6c/" },
+  { type: "series", slug: "african-women", title: "African Women Being Punished for Being Poor", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/african-women-being-punished-for-being-poor/${n}.png`), postUrl: "https://www.instagram.com/p/DHdLIMoRC4M/" },
+  { type: "series", slug: "health-workers-strike", title: "Health Workers Strike", images: [1, 2, 3].map((n) => `${STORIES}/health-workers-strike/${n}.png`), postUrl: "https://www.instagram.com/p/DJ9jcLhM2Ck/" },
+  { type: "series", slug: "new-media-journalism", title: "New Media Journalism", images: [1, 2, 3, 4, 5, 6, 7, 8].map((n) => `${STORIES}/new-media-journalism/${n}.png`), postUrl: "https://www.instagram.com/p/DLcSd3APweU/" },
 ];
 
 const brandProjects = [
@@ -156,9 +144,9 @@ export default function BBCNewsAfricaPage() {
           {storyPosts.map((post, i) => (
             <Reveal key={post.slug} delay={i * 0.02}>
               {post.type === "single" ? (
-                <ImgSlot src={post.src} label={post.title} aspect="1/1" accent={ACCENT} />
+                <ImgSlot src={post.src} label={post.title} aspect="1/1" accent={ACCENT} postUrl={post.postUrl} />
               ) : (
-                <SeriesCard images={post.images} label={post.title} aspect="1/1" accent={ACCENT} />
+                <SeriesCard images={post.images} label={post.title} aspect="1/1" accent={ACCENT} postUrl={post.postUrl} />
               )}
             </Reveal>
           ))}

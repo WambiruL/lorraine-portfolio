@@ -5,8 +5,8 @@ import { AnimatePresence, motion, type PanInfo } from "framer-motion";
 
 const DEFAULT_ACCENT = "#899878";
 
-export function ImgSlot({ src, label, aspect = "4/5", className = "", accent }: { src: string; label: string; aspect?: string; className?: string; accent?: string }) {
-  return <SeriesCard images={[src]} label={label} aspect={aspect} className={className} accent={accent} />;
+export function ImgSlot({ src, label, aspect = "4/5", className = "", accent, postUrl }: { src: string; label: string; aspect?: string; className?: string; accent?: string; postUrl?: string }) {
+  return <SeriesCard images={[src]} label={label} aspect={aspect} className={className} accent={accent} postUrl={postUrl} />;
 }
 
 export function SeriesCard({
@@ -15,12 +15,15 @@ export function SeriesCard({
   aspect = "4/5",
   className = "",
   accent = DEFAULT_ACCENT,
+  postUrl,
 }: {
   images: string[];
   label: string;
   aspect?: string;
   className?: string;
   accent?: string;
+  /** Link to where this story is actually published, e.g. its Instagram post. */
+  postUrl?: string;
 }) {
   const [open, setOpen] = useState(false);
   const [index, setIndex] = useState(0);
@@ -114,34 +117,74 @@ export function SeriesCard({
               CLOSE ✕
             </button>
 
-            <p
-              className="absolute top-7 left-6 md:left-10"
-              style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", color: accent, textTransform: "uppercase" }}
-            >
-              {multi ? `${label} · ${index + 1} / ${images.length}` : label}
-            </p>
-
-            <motion.div
-              key={index}
-              drag={multi ? "x" : false}
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.6}
-              onDragEnd={handleDragEnd}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.25 }}
-              className="relative max-h-[80vh] max-w-[92vw] md:max-w-[420px]"
-              style={{ aspectRatio: "2160/2700", touchAction: multi ? "pan-y" : "auto", cursor: multi ? "grab" : "default" }}
-              whileTap={multi ? { cursor: "grabbing" } : undefined}
+            <div
+              className="absolute top-7 left-6 md:left-10 right-20 md:right-28 flex flex-col gap-1.5"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={images[index]}
-                alt={multi ? `${label}, slide ${index + 1}` : label}
-                className="w-full h-full object-contain pointer-events-none select-none"
-                draggable={false}
-              />
-            </motion.div>
+              <p style={{ fontFamily: "var(--font-mono)", fontSize: "0.6rem", letterSpacing: "0.2em", color: accent, textTransform: "uppercase" }}>
+                {multi ? `${label} · ${index + 1} / ${images.length}` : label}
+              </p>
+              {postUrl && (
+                <a
+                  href={postUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start"
+                  style={{ fontFamily: "var(--font-mono)", fontSize: "0.58rem", letterSpacing: "0.15em", color: "rgba(228,230,195,0.55)", borderBottom: "1px solid rgba(228,230,195,0.25)" }}
+                >
+                  VIEW POST ↗
+                </a>
+              )}
+            </div>
+
+            <div className="flex flex-col items-center gap-4 max-w-[92vw] md:max-w-[420px]">
+              <motion.div
+                key={index}
+                drag={multi ? "x" : false}
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.6}
+                onDragEnd={handleDragEnd}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.25 }}
+                className="relative max-h-[72vh] w-full"
+                style={{ aspectRatio: "2160/2700", touchAction: multi ? "pan-y" : "auto", cursor: multi ? "grab" : "default" }}
+                whileTap={multi ? { cursor: "grabbing" } : undefined}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={images[index]}
+                  alt={multi ? `${label}, slide ${index + 1}` : label}
+                  className="w-full h-full object-contain pointer-events-none select-none"
+                  draggable={false}
+                />
+              </motion.div>
+
+              {multi && (
+                <div
+                  className="flex items-center gap-2 w-full overflow-x-auto pb-1"
+                  style={{ scrollbarWidth: "none" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {images.map((src, i) => (
+                    <button
+                      key={src}
+                      type="button"
+                      onClick={() => setIndex(i)}
+                      className="relative flex-shrink-0 overflow-hidden"
+                      style={{
+                        width: 44, aspectRatio: "4/5",
+                        border: i === index ? `1px solid ${accent}` : "1px solid rgba(228,230,195,0.15)",
+                        opacity: i === index ? 1 : 0.45,
+                        transition: "opacity 0.25s, border-color 0.25s",
+                      }}
+                    >
+                      <img src={src} alt="" className="w-full h-full object-cover pointer-events-none select-none" draggable={false} />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             {multi && (
               <>
@@ -162,21 +205,6 @@ export function SeriesCard({
                   →
                 </button>
               </>
-            )}
-
-            {multi && (
-              <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
-                {images.map((_, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      width: 5, height: 5, borderRadius: "50%",
-                      background: i === index ? accent : "rgba(228,230,195,0.25)",
-                      transition: "background 0.3s",
-                    }}
-                  />
-                ))}
-              </div>
             )}
           </motion.div>
         )}
