@@ -80,7 +80,7 @@ export default function Hero() {
           className="relative z-20 w-[170px] h-[200px] sm:w-[220px] sm:h-[255px] lg:w-[280px] lg:h-[325px]"
         >
           <Image
-            src="/images/lorraine.jpeg"
+            src="/images/lorraine.png"
             alt="Lorraine Wambiru"
             fill
             priority
