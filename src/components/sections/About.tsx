@@ -287,7 +287,7 @@ export default function About() {
                 className="text-sage/55 leading-[1.8]"
                 style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem" }}
               >
-                I&apos;m a Product & Visual Designer with 2+ years of experience
+                I&apos;m a Product & Visual Designer with 3+ years of experience
                 designing digital products and visual identities, including work
                 for <span className="text-cream/70">BBC News</span>, where I contributed to
                 graphic design and event branding for one of the world&apos;s
@@ -435,7 +435,7 @@ export default function About() {
               </a>
 
               <a
-                href="https://www.behance.net"
+                href="https://www.behance.net/lorrainewambui"
                 target="_blank"
                 rel="noopener noreferrer"
                 data-hover
